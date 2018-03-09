@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Security-Policy" content="default-src https://maps.google.com http://safeapp898956.epareto.com https://securetoken.googleapis.com https://cdn.firebase.com https://apis.google.com https://fonts.gstatic.com https://www.google.com https://www.googleapis.com https://www.gstatic.com 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src https://fonts.googleapis.com https://cdn.firebase.com 'self' 'unsafe-inline'; media-src *; img-src https://www.gstatic.com 'self' data: content:;">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" type="text/css" href="css/framework7.material.min.css">
+    <link rel="stylesheet" type="text/css" href="css/framework7.material.colors.min.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/2.3.0/firebaseui.js"></script>
+    <script src="js/chatScript.js"></script>
+    <link rel="stylesheet" href="css/chatcss.css" />
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.3.0/firebaseui.css" />
+    <title>SafeApp</title>
+</head>
+
+<body class="loading" id="body">
+
+    <div class="statusbar-overlay"></div>
+    <div class="panel-overlay"></div>
+
+
+    <div class="views">
+        <div class="view view-main">
+            <div class="pages navbar-fixed">
+                <div data-page="index" class="page">
+                    <div class="page-content">
+                        <div class="loader-container">
+                            <div class="loader-inner">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                        </div>
+                        <div class="app" id="app">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="popover dial-popover">
+        <div class="popover-inner">
+            <div class="list-block media-list">
+                <ul>
+                    <li>
+                        <a href="#" id="checkin" class="item-content item-link">
+                            <div class="item-media">
+                                <i class="icon icon-checkin"></i>
+                            </div>
+                            <div class="item-inner">
+                                <div class="item-title">Check in</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" id="callmenow" class="item-content item-link">
+                            <div class="item-media">
+                                <i class="icon icon-callme"></i>
+                            </div>
+                            <div class="item-inner">
+                                <div class="item-title">Call me now</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" id="mylocation" class="item-content item-link">
+                            <div class="item-media">
+                                <i class="icon icon-mylocation"></i>
+                            </div>
+                            <div class="item-inner">
+                                <div class="item-title">My location</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" id="chat" class="item-content item-link">
+                            <div class="item-media">
+                                <i class="icon icon-chat"></i>
+                            </div>
+                            <div class="item-inner">
+                                <div class="item-title">Chat</div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="popover more-popover">
+        <div class="popover-inner">
+            <div class="list-block">
+                <ul>
+                    <li>
+                        <a href="contacts.html" class="item-content item-link close-popover">
+                            <div class="item-inner">
+                                <div class="item-title">Manage contacts</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="history.html" class="item-content item-link close-popover">
+                            <div class="item-inner">
+                                <div class="item-title">Incident History</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" id="clearIncidents" class="item-content item-link close-popover">
+                            <div class="item-inner">
+                                <div class="item-title">Clear Incidents</div>
+                            </div>
+                        </a>
+                    </li>
+                    <!-- <li>
+                        <a href="#" id="logout" class="item-content item-link close-popover">
+                            <div class="item-inner">
+                                <div class="item-title">Logout</div>
+                            </div>
+                        </a>
+                    </li> -->
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/framework7.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+</body>
+
+</html>
