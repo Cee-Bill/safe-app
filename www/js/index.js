@@ -235,8 +235,8 @@ var hybridapp = {
     },
     signUpUser: function(page) {
 
-        var username = $$(page.container).find('#email').val();
-        var email = username;
+        var email = $$(page.container).find('#email').val();
+        var username = null;
         
         var password = $$(page.container).find('#password').val();
 
@@ -244,25 +244,21 @@ var hybridapp = {
         if (email.length > 0 && password.length > 0) {
             myApp.alert(email);
             $$.ajax({
-                url: 'http://safeapp898956.epareto.com/wp-json/wp/v2/users',
+                url: 'http://safeapp898956.epareto.com/api/user/generate_auth_cookie?insecure=cool&username='+email+'&password='+password,
                 async: true,
                 crossDomain: true,
                 method: 'POST',
                 data: {
-                    "username": username,
-                    "email": email,
+                    "username": email,
                     "password": password
-                },
-                headers: {
-                    "authorization": "Basic "+btoa('user1:user1')
                 },
                 beforeSend: function(xhr) {},
                 error: function(xhr, status) {
-                    myApp.alert("User not found");
+                    myApp.alert("Could not Login");
                 },
                 success: function(data, status, xhr) {
                     var user = JSON.parse(data);
-                    if (user.id) {
+                    if (user.user.id) {
                         mainView.router.load({ url: 'introduction.html' });
                         window.localStorage.setItem('loggedin', true);
                         myApp.hidePreloader();
