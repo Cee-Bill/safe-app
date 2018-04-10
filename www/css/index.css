@@ -1131,3 +1131,68 @@ h1 {
     border: none;
     outline: none;
 }
+
+
+
+/* General Style Rules */
+/* .flex-display {
+    display: inline-flex !important;
+}
+
+.pad-left {
+    padding-left: 16px !important;
+}
+
+.navbar {
+    height: 9%;
+} */
+
+/*** #sideMenuHolder & popover-floating-button style rules ***/
+/* div#sideMenuHolder {
+    width: 0 !important;
+    height: 100% !important;
+    top: 0 !important;
+    left: 194.4px !important;
+    padding-top: 20px !important;
+    z-index: 1 !important;
+    opacity: 0.9 !important;
+    transition: 0.3s !important;
+    background-color: #808080 !important;
+} */
+/* div.side-menu-holder {
+    height: 100% !important;
+    width: 80vw !important;
+    display: block !important;
+    right: 1px !important;
+    transition: 0.3s !important;
+
+} */
+
+
+/* Navbar on data pages style rules */
+div.page>div.navbar>div.navbar-inner>div.left {
+    border-right: 1px outset #ffdead !important;
+}
+
+/*** TRack my help style rules***/
+div.map-holder {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+div#map {
+    height: 100%;
+}
+
+/* Remove box shadow on dashboard */
+/* a#popUpMenu {
+    box-shadow: none !important;
+} */
+
+/* style logo on navbar */
+.navbar-img {
+    width: 49px;
+    height: 61px;
+    padding-top: 5px;
+}
+
