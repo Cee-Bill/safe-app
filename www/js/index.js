@@ -1,4 +1,4 @@
-// Countdown timer
+ // Countdown timer
 var confirmTimer;
 
 // Init App
@@ -235,22 +235,20 @@ var hybridapp = {
     },
     signUpUser: function(page) {
 
-        var email = $$(page.container).find('#email').val();
-        var username = null;
+        var username = $$(page.container).find('#email').val();
         
         var password = $$(page.container).find('#password').val();
 
 
-        if (email.length > 0 && password.length > 0) {
-            myApp.alert(email);
+        if (username.length > 0 && password.length > 0) {
             $$.ajax({
-                url: 'http://safeapp898956.epareto.com/api/user/generate_auth_cookie?insecure=cool&username='+email+'&password='+password,
+                url: 'http://safeapp.com/api_v2/auth/login',
                 async: true,
                 crossDomain: true,
                 method: 'POST',
                 data: {
-                    "username": email,
-                    "password": password
+                    "u": username,
+                    "p": password
                 },
                 beforeSend: function(xhr) {},
                 error: function(xhr, status) {
@@ -258,7 +256,8 @@ var hybridapp = {
                 },
                 success: function(data, status, xhr) {
                     var user = JSON.parse(data);
-                    if (user.user.id) {
+                    if (user.id) {
+                        localStorage.setItem("userData",JSON.stringify(user));
                         mainView.router.load({ url: 'introduction.html' });
                         window.localStorage.setItem('loggedin', true);
                         myApp.hidePreloader();
@@ -367,17 +366,16 @@ var hybridapp = {
         function onSuccess(position) {
             content += '<a href="https://maps.google.com/?q=' + position.coords.latitude + ',' + position.coords.longitude + '" target="_blank">' + position.coords.latitude + ',' + position.coords.longitude + '</a>';
             $$.ajax({
-                url: 'http://safeapp898956.epareto.com/wp-json/wp/v2/safeappticket/',
+                url: 'http://safeapp.com/api_v2/ticket/set',
                 async: true,
                 crossDomain: true,
                 method: 'POST',
                 data: {
-                    "title": title,
-                    "content": content,
-                    "excerpt": excerpt
+                    "ticket_type": 1,
+                    "ticket_location": content
                 },
                 headers: {
-                    "authorization": "Basic "+btoa('user1:user1')
+                    "X-USER": JSON.parse(localStorage.getItem("userData")).user_id
                 },
                 beforeSend: function(xhr) {},
                 error: function(xhr, status) {
@@ -393,7 +391,8 @@ var hybridapp = {
                 },
                 success: function(data, status, xhr) {
                     myApp.hidePreloader();
-                    var results = JSON.parse(data);
+                    console.log(data);
+                    var results = data;
                     if (type == "emergency") {
                         $$('a.emergency').addClass('disabled');
                         window.localStorage.setItem('emergencyinprogress', "true");
@@ -404,6 +403,7 @@ var hybridapp = {
                     }
 
                     savedIncidents.push(results);
+                    localStorage.setItem("current_ticket",results);
                     window.localStorage.setItem('savedincident', JSON.stringify(savedIncidents));
                 }
             });
@@ -564,6 +564,7 @@ myApp.onPageInit('change_account', function (page) {
 });
 
 myApp.onPageInit('dashboard', function(page) {
+    localStorage.setItem("msgCount",0);
     $$('.floating-button').on('click', function() {
         var clickedLink = this;
         myApp.popover('.dial-popover', clickedLink);
@@ -617,6 +618,10 @@ myApp.onPageInit('dashboard', function(page) {
     $$('#chat').on('click', function() {
         myApp.closeModal();
         mainView.router.load({ url: 'chat.html' });
+         window.setInterval(function(){
+            var tkt = localStorage.getItem("current_ticket");
+            fetchChat(tkt);
+        },4000)
     });
 
     $$('#switchAccount').on('click', function () {
@@ -671,10 +676,11 @@ myApp.onPageInit('dashboard', function(page) {
 });
 
 
-    $$('#completeAction').on('click',function(){
-        myApp.prompt("Please enter your PIN to confirm");
-        console.log("completed")
-    });
+//    $$('#completeAction').on('click',function(){
+//        myApp.prompt("Please enter your PIN to confirm");
+//        console.log("completed")
+//        $$(this).removeAttribute("disabled")
+//    });
 
 myApp.onPageInit('sendaction', function(page) {
     if (window.localStorage.getItem('emergencyinprogress') == "true") {
@@ -696,6 +702,17 @@ myApp.onPageInit('sendaction', function(page) {
     if (window.localStorage.getItem('emergencyinprogress') == "true" && window.localStorage.getItem('firstaidinprogress') == "true") {
         $$('.content-block-title').text('IN PROGRESS . . .');
     }
+    
+    $$.ajax({
+        url: "http://safeapp.com/api_v2/ticket/get",
+        method: "post",
+        data: {"ticket_number":localStorage.getItem("current_ticket")},
+        success: function(data,status,xhr){
+            var ticketStatus = data.status;
+            
+        }
+    })
+
 });
 
 myApp.onPageInit('processalert', function(page) {

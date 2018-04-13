@@ -2,10 +2,13 @@
     <div class="navbar">
         <div class="navbar-inner">
             <div class="left"><a href="#" class="back link icon-only ripple-black"><i class="icon icon-back"></i></a></div>
-            <div class="center">SafeApp</div>
-            <div class="right"><a href="#" class="more-link ripple-black link icon-only"><i class="icon icon-more"></i></a></div>
+            <div class="center">Instant chat</div>
+            <div class="right">
+                <a href="#" id="addemergencycontact" class="ripple-black link icon-only"><i class="icon icon-missing"></i></a>
+            </div>
         </div>
     </div>
+<<<<<<< HEAD
     <div class="page-content">
     <ol class="chat">
     <li class="other">
@@ -37,6 +40,24 @@
     <input class="textarea" type="text" placeholder="Type here!"/>
     <a class="send-btn">send</a>
     <div class="emojis"></div>
+=======
+    <div class="toolbar messagebar">
+  <div class="toolbar-inner">
+    <div class="messagebar-area">
+      <!-- messagebar resizable textarea -->
+      <textarea class="resizable" placeholder="Message"></textarea>
+    </div>
+    <a href="#" class="link" onclick="sendMessage(localStorage.getItem('current_ticket'))">Send</a>
+  </div>
+  <!-- messagebar sheet -->
+  <div class="messagebar-sheet">...</div>
+</div>
+  <div class="page-content messages-content">
+    <div class="messages">
+      <!-- Date stamp -->
+      
+>>>>>>> 297b3616996781b1a0387faed75b7b34740db45b
 
     </div>
+  </div>
 </div>
