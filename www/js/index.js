@@ -1,4 +1,4 @@
-// Countdown timer
+ // Countdown timer
 var confirmTimer;
 
 // Init App
@@ -630,11 +630,11 @@ myApp.onPageInit('dashboard', function(page) {
 });
 
 
-    $$('#completeAction').on('click',function(){
-        myApp.prompt("Please enter your PIN to confirm");
-        console.log("completed")
-        $$(this).removeAttribute("disabled")
-    });
+//    $$('#completeAction').on('click',function(){
+//        myApp.prompt("Please enter your PIN to confirm");
+//        console.log("completed")
+//        $$(this).removeAttribute("disabled")
+//    });
 
 myApp.onPageInit('sendaction', function(page) {
     if (window.localStorage.getItem('emergencyinprogress') == "true") {
@@ -656,6 +656,17 @@ myApp.onPageInit('sendaction', function(page) {
     if (window.localStorage.getItem('emergencyinprogress') == "true" && window.localStorage.getItem('firstaidinprogress') == "true") {
         $$('.content-block-title').text('IN PROGRESS . . .');
     }
+    
+    $$.ajax({
+        url: "http://safeapp.com/api_v2/ticket/get",
+        method: "post",
+        data: {"ticket_number":localStorage.getItem("current_ticket")},
+        success: function(data,status,xhr){
+            var ticketStatus = data.status;
+            
+        }
+    })
+
 });
 
 myApp.onPageInit('processalert', function(page) {
