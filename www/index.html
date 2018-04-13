@@ -7,26 +7,28 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" href="../node_modules/framework7-icons/css/framework7-icons.css">
     <link rel="stylesheet" type="text/css" href="css/framework7.material.min.css">
     <link rel="stylesheet" type="text/css" href="css/framework7.material.colors.min.css">
     <link rel="stylesheet" type="text/css" href="css/index.css">
 
-    <!-- <script src="js/geo_map_script.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwYPy8w12OgYlePsfOeBGSngHxwCgGeeY&callback=initMap" async
-        defer></script> -->
-
+    
+    <script src="js/jquery.js"></script>
 
     <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
     <script src="https://cdn.firebase.com/libs/firebaseui/2.3.0/firebaseui.js"></script>
     <script src="js/menu_style_script.js"></script>
     <script src="js/chatScript.js"></script>
+
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAnLmPtiLZFALqHJpPD5IeDYAI1xtqZ5x0&callback=initMap" async
+        defer></script> -->
+   
     <link rel="stylesheet" href="css/chatcss.css" />
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.3.0/firebaseui.css" />
     <title>SafeApp</title>
 </head>
 
 <body class="loading" id="body">
-
     <div class="statusbar-overlay"></div>
     <div class="panel-overlay"></div>
 
@@ -68,7 +70,7 @@
                     <li>
                         <a href="#" id="chat" class="item-content item-link">
                             <div class="item-media">
-                                <i class="icon icon-chat"></i>
+                                <i class="icon icon-chats"></i>
                             </div>
                             <div class="item-inner">
                                 <div class="item-title">Chat</div>
@@ -85,12 +87,12 @@
                             </div>
                         </a>
                     </li>
-
+                    
                     <!-- Device Tracker -->
                     <li>
                         <a href="#" id="device-tracker" class="item-content item-link">
                             <div class="item-media">
-                                <i class="icon icon-chat"></i>
+                                <i class="icon icon-tracker"></i>
                             </div>
                             <div class="item-inner">
                                 <div class="item-title">Device Tracker</div>
@@ -109,12 +111,12 @@
                             </div>
                         </a>
                     </li>
-
+                    
                     <!--Nearest Police Stattion -->
                     <li>
                         <a href="#" id="police_station" class="item-content item-link">
                             <div class="item-media">
-                                <i class="icon icon-****"></i>
+                                <i class="icon icon-ploicestation"></i>
                             </div>
                             <div class="item-inner">
                                 <div class="item-title">
@@ -124,11 +126,22 @@
                         </a>
                     </li>
                     
+                    <li>
+                        <a href="tel:112" id="callEmergency" class="item-content item-link">
+                            <div class="item-media">
+                                <i class="icon icon-emergencycall"></i>
+                            </div>
+                            <div class="item-inner">
+                                <div class="item-title">112</div>
+                            </div>
+                        </a>
+                    </li>
+                    
                     <!--Where is my help? *** Link to live geolocation -->
                     <li>
                         <a href="#" id="track_help" class="item-content item-link">
                             <div class="item-media">
-                                <i class="icon icon-****"></i>
+                                <i class="icon icon-trackinghelp"></i>
                             </div>
                             <div class="item-inner">
                                 <div class="item-title">
@@ -138,22 +151,6 @@
                         </a>
                     </li>
                     
-                    <!--Options/ settings for help request -->
-                    <li class="flex-display pad-left">
-                        <div class="item-media">
-                            <i class="icon icon-callme"></i>
-                        </div>
-                        <div class="item-inner">
-                            <div class="item-title">Options</br>
-                                <!--Request Emergency Medical Service -->
-                                <input type="checkbox" name="ems" value="ems" /> Request Emergency Medical Service
-                                <br/>
-                                <input type="checkbox" name="ems" value="ems" /> Request Emergency Medical Service
-                                <br/>
-                                <input type="checkbox" name="ems" value="ems" /> Request Emergency Medical Service
-                            </div>
-                        </div>
-                    </li>
                     
                 </ul>
             </div>
@@ -199,22 +196,38 @@
                             </div>
                         </a>
                     </li>
+                    <!-- Switch Account -->
+                    <li>
+                        <a href="#" id="switchAccount" class="item-content item-link close-popover">
+                            <div class="item-inner">
+                                <div class="item-title">Switch Account</div>
+                            </div>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
     </div>
-    <script type="text/javascript" src="cordova.js"></script>
+    <!-- <script type="text/javascript" src="cordova.js"></script> -->
     <script type="text/javascript" src="js/framework7.min.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="../node_modules/cordova-plugin-call-number/www/CallNumber.js"></script>
     
-    <script src="js/geo_map_script.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwYPy8w12OgYlePsfOeBGSngHxwCgGeeY&callback=initMap" async
-        defer></script>
-
-
     
-    <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBp-PXosHGqgiqNOoV2a1MQAuWPYlSOhBY&callback=initMap"> -->
-    <!-- </script> -->
+
+    <!-- <script>
+                var map;
+                var initMap = function() {
+                    map = new google.maps.Map(document.getElementById('map'), {
+                        center: { lat: -34.397, lng: 150.644 },
+                        zoom: 8
+                    });
+                }
+                google.maps.event.addDomListener(window, 'load', initMap);
+            </script>  -->
+    <script src='js/map.js'></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAnLmPtiLZFALqHJpPD5IeDYAI1xtqZ5x0&libraries=places&callback=initMap" async
+                defer></script>
     
 
 </body>

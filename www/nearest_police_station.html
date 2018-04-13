@@ -1,4 +1,9 @@
+<script>
+    console.log('F7');
+</script>
+
 <div data-page="police_station" class="page">
+
     <div class="navbar">
         <div class="navbar-inner">
             <div class="left">
@@ -6,17 +11,19 @@
                     <i class="icon icon-back"></i>
                 </a>
             </div>
+            <div class="center">
+                <h6 style="width: 100%; text-align: center;">Police Stations Nearest to You</h6>
+            </div>
             <div class="right">
-                <!-- <a href="#" id="" class="ripple-black link icon-only"><i class="icon icon-map"></i></a> -->
-                <img src="img/gh_police_logo_png.png" class="navbar-img" />
+                <a href="#" id="" class="ripple-black link icon-only"><i class="icon icon-map"></i></a>
+                <!-- <img src="img/gh_police_logo_png.png" class="navbar-img" /> -->
             </div>
         </div>
     </div>
 
     <!-- put content here -->
-    <div class="page-content">
-        <h3>Page to display a map and detailed address showing police stations nearby</h3>
-
-
+    <div class="page-content map-container" data-tap-disabled="true">
+        <div id="map"></div>
     </div>
+
 </div>

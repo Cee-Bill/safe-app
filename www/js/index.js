@@ -557,6 +557,12 @@ myApp.onPageInit('introduction', function(page) {
     });
 });
 
+myApp.onPageInit('change_account', function (page) {
+    $$('#switchAccountId').on('click', function () {
+        myApp.alert("Account has been switched successfully!");
+    });
+});
+
 myApp.onPageInit('dashboard', function(page) {
     $$('.floating-button').on('click', function() {
         var clickedLink = this;
@@ -612,6 +618,46 @@ myApp.onPageInit('dashboard', function(page) {
         myApp.closeModal();
         mainView.router.load({ url: 'chat.html' });
     });
+
+    $$('#switchAccount').on('click', function () {
+        myApp.closeModal();
+        mainView.router.load({ url: 'change_account.html' });
+    });
+
+    // link to track_help map page
+    $$('#track_help').on('click', function () {
+        myApp.closeModal();
+        mainView.router.load({ url: 'track_help.html' });
+    });
+
+    // link to nearest police station
+    $$('#police_station').on('click', function () {
+        myApp.closeModal();
+        mainView.router.load({ url: 'nearest_police_station.html' });
+    });
+    var map;
+
+        //Inject element
+        // $$('head').append("<script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAnLmPtiLZFALqHJpPD5IeDYAI1xtqZ5x0&callback=initMap' async defer ></script >");
+        // $$('head').append("<script src='js/map.js'></script>");
+
+    $$(document).on('page:init', '.page[data-page="police_station"]', function (e) {
+        initMap();
+    });
+
+
+    // link to device tracker
+    $$('#device_tracker').on('click', function () {
+        myApp.closeModal();
+        mainView.router.load({ url: 'device_tracker.html' });
+    });
+
+
+
+
+
+    
+
     
     $$('#logout').on('click', function() {
         myApp.closeModal();

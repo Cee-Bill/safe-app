@@ -6,5 +6,39 @@
     },
     "is_top_level": true,
     "variables": {}
+  },
+  "cordova-plugin-dialogs": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-dialogs"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-geolocation": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-geolocation@^4.0.1"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-googlemaps": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-googlemaps"
+    },
+    "is_top_level": true,
+    "variables": {
+      "API_KEY_FOR_ANDROID": "AIzaSyAnLmPtiLZFALqHJpPD5IeDYAI1xtqZ5x0"
+    }
+  },
+  "cordova-plugin-call-number": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-call-number"
+    },
+    "is_top_level": true,
+    "variables": {}
   }
 }
