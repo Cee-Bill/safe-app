@@ -27,7 +27,7 @@ var initMap = function () {
             var service = new google.maps.places.PlacesService(map);
             service.nearbySearch({
                 location: pos,
-                radius: 500,
+                radius: 50000,
                 type: ['police']
             }, callback);
 
