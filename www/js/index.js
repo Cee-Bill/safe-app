@@ -242,7 +242,7 @@ var hybridapp = {
 
         if (username.length > 0 && password.length > 0) {
             $$.ajax({
-                url: 'http://safeapp.com/api_v2/auth/login',
+                url: 'http://safeapp.appwebstage.com/api_v2/auth/login',
                 async: true,
                 crossDomain: true,
                 method: 'POST',
@@ -366,7 +366,7 @@ var hybridapp = {
         function onSuccess(position) {
             content += '<a href="https://maps.google.com/?q=' + position.coords.latitude + ',' + position.coords.longitude + '" target="_blank">' + position.coords.latitude + ',' + position.coords.longitude + '</a>';
             $$.ajax({
-                url: 'http://safeapp.com/api_v2/ticket/set',
+                url: 'http://safeapp.appwebstage.com/api_v2/ticket/set',
                 async: true,
                 crossDomain: true,
                 method: 'POST',
@@ -676,12 +676,39 @@ myApp.onPageInit('dashboard', function(page) {
 });
 
 
-//    $$('#completeAction').on('click',function(){
-//        myApp.prompt("Please enter your PIN to confirm");
-//        console.log("completed")
-//        $$(this).removeAttribute("disabled")
-//    });
-
+    
+function completeAction(pin){
+    
+        if(pin == "5566"){
+            $$.ajax({
+        url: "http://safeapp.appwebstage.com/api_v2/ticket/edit",
+        method: "POST",
+        async: true,
+        crossDomain: true,
+        data: {"ticket_number":localStorage.getItem("current_ticket"),"field":"status_id","value":"2"},
+        success: function(data,status,xhr){
+            if(data == 1 || data == "1"){
+                myApp.alert("Ticket resolved");
+                $$('#completeAction').css("display","none");
+                $$('#clearTicket').on("click",function(){
+                    if(localStorage.getItem('emergencyinprogress')){
+                        localStorage.removeItem('emergencyinprogress');
+                    }
+                    if(localStorage.getItem('emergencyinprogress')){
+                        localStorage.removeItem('firstaidinprogress');
+                    }
+                    mainView.router.load({ url: 'dashboard.html' });
+                })
+                $$('#clearTicket').css('display','initial');
+                $$("[data-indicate='resolved']").removeClass("incomplete").addClass("complete");
+            }
+        }
+            })
+        }
+        else {
+            myApp.alert("failed");
+        }
+}
 myApp.onPageInit('sendaction', function(page) {
     if (window.localStorage.getItem('emergencyinprogress') == "true") {
         $$('a.emergency').addClass('disabled');
@@ -703,13 +730,39 @@ myApp.onPageInit('sendaction', function(page) {
         $$('.content-block-title').text('IN PROGRESS . . .');
     }
     
+    $$('#completeAction').on('click',function(){
+        myApp.prompt("Please enter your PIN to confirm","PIN Required",completeAction,function(){return;});
+    });
+    
     $$.ajax({
-        url: "http://safeapp.com/api_v2/ticket/get",
-        method: "post",
+        url: "http://safeapp.appwebstage.com/api_v2/ticket/get",
+        method: "POST",
+        async: true,
+        crossDomain: true,
         data: {"ticket_number":localStorage.getItem("current_ticket")},
         success: function(data,status,xhr){
-            var ticketStatus = data.status;
+            data = JSON.parse(data);
+            var ticketStatus = data.status_id;
+            var classArray;
+            if(ticketStatus == "6"){
+                classArray = {"sent":"complete","seen":"incomplete","started":"incomplete","resolved":"incomplete"}
+            }
             
+            else{
+                if(ticketStatus == "1"){
+                classArray = {"sent":"complete","seen":"complete","started":"complete","resolved":"incomplete"}
+            }
+            else {
+                classArray = {"sent":"complete","seen":"complete","started":"complete","resolved":"complete"}
+                $$('#completeAction').css("display","none");
+            }
+            }
+            
+            $$("[data-indicate]").each(function(){
+                $$(this).removeClass("incomplete");
+                $$(this).addClass(classArray[$$(this).attr("data-indicate")])
+            })
+                
         }
     })
 
