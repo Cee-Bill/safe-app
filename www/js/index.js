@@ -242,7 +242,7 @@ var hybridapp = {
 
         if (username.length > 0 && password.length > 0) {
             $$.ajax({
-                url: 'http://safeapp.com/api_v2/auth/login',
+                url: 'http://safeapp.appwebstage.com/api_v2/auth/login',
                 async: true,
                 crossDomain: true,
                 method: 'POST',
@@ -366,7 +366,7 @@ var hybridapp = {
         function onSuccess(position) {
             content += '<a href="https://maps.google.com/?q=' + position.coords.latitude + ',' + position.coords.longitude + '" target="_blank">' + position.coords.latitude + ',' + position.coords.longitude + '</a>';
             $$.ajax({
-                url: 'http://safeapp.com/api_v2/ticket/set',
+                url: 'http://safeapp.appwebstage.com/api_v2/ticket/set',
                 async: true,
                 crossDomain: true,
                 method: 'POST',
@@ -681,7 +681,7 @@ function completeAction(pin){
     
         if(pin == "5566"){
             $$.ajax({
-        url: "http://safeapp.com/api_v2/ticket/edit",
+        url: "http://safeapp.appwebstage.com/api_v2/ticket/edit",
         method: "POST",
         async: true,
         crossDomain: true,
@@ -735,7 +735,7 @@ myApp.onPageInit('sendaction', function(page) {
     });
     
     $$.ajax({
-        url: "http://safeapp.com/api_v2/ticket/get",
+        url: "http://safeapp.appwebstage.com/api_v2/ticket/get",
         method: "POST",
         async: true,
         crossDomain: true,
