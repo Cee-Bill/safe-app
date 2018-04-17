@@ -1,4 +1,4 @@
-// Countdown timer
+ // Countdown timer
 var confirmTimer;
 
 // Init App
@@ -126,85 +126,6 @@ var hybridapp = {
             }
         });
     },
-    firebaseInit: function() {
-        // Initialize Firebase
-        var config = {
-            apiKey: "AIzaSyAzNF_kM3c5SR72ruvPbw3kP6hKRjdcUEw",
-            authDomain: "safeapp-aabb7.firebaseapp.com",
-            databaseURL: "https://safeapp-aabb7.firebaseio.com",
-            projectId: "safeapp-aabb7",
-            storageBucket: "safeapp-aabb7.appspot.com",
-            messagingSenderId: "74614122239"
-        };
-        firebase.initializeApp(config);
-    },
-    firebaseUIInit: function() {
-        // FirebaseUI config.
-        var uiConfig = {
-            signInSuccessUrl: 'login.html',
-            signInOptions: [
-                firebase.auth.PhoneAuthProvider.PROVIDER_ID
-            ],
-            // Terms of service url.
-            tosUrl: 'terms.html'
-        };
-
-        // Initialize the FirebaseUI Widget using Firebase.
-        var ui = new firebaseui.auth.AuthUI(firebase.auth());
-        // The start method will wait until the DOM is loaded.
-        ui.start('#app', uiConfig);
-        hybridapp.monitorAuthState();
-    },
-    registerAuthProvider: function() {
-        var provider = new firebase.auth.GoogleAuthProvider();
-        firebase.auth().signInWithRedirect(provider).then(function() {
-            firebase.auth().getRedirectResult().then(function(result) {
-                // This gives you a Google Access Token.
-                // You can use it to access the Google API.
-                var token = result.credential.accessToken;
-                // The signed-in user info.
-                var user = result.user;
-                // ...
-                if (user) {
-                    console.log(user);
-                    document.getElementById('body').classList = 'framework7-root verified';
-                    if (window.localStorage.getItem('loggedin')) {
-                        mainView.router.load({ url: 'dashboard.html' });
-                    } else {
-                        mainView.router.load({ url: 'login.html' });
-                        window.localStorage.setItem('loggedin', false);
-                    }
-                } else {
-                    // User is signed out.
-                    document.getElementById('body').classList = 'framework7-root signout';
-                }
-            }).catch(function(error) {
-                // Handle Errors here.
-                var errorCode = error.code;
-                var errorMessage = error.message;
-            });
-        });
-        hybridapp.monitorAuthState();
-    },
-    monitorAuthState: function() {
-        firebase.auth().onAuthStateChanged(function(user) {
-            if (user) {
-                console.log(user);
-                document.getElementById('body').classList = 'framework7-root verified';
-                if (window.localStorage.getItem('loggedin')) {
-                    mainView.router.load({ url: 'dashboard.html' });
-                } else {
-                    mainView.router.load({ url: 'login.html' });
-                    window.localStorage.setItem('loggedin', false);
-                }
-            } else {
-                // User is signed out.
-                document.getElementById('body').classList = 'framework7-root signout';
-            }
-        }, function(error) {
-            console.log(error);
-        });
-    },
     otherContactTpl: function(contact) {
         var id = contact.id,
             phoneNumber = contact.phoneNumbers ? contact.phoneNumbers[0].value : contact.displayName,
@@ -236,33 +157,28 @@ var hybridapp = {
     signUpUser: function(page) {
 
         var username = $$(page.container).find('#email').val();
-        var email = username;
-        
         var password = $$(page.container).find('#password').val();
+        myApp.hidePreloader();
+        myApp.alert(username+"----"+password);
 
-
-        if (email.length > 0 && password.length > 0) {
-            myApp.alert(email);
+        if (username.length > 0 && password.length > 0) {
             $$.ajax({
-                url: 'http://safeapp898956.epareto.com/wp-json/wp/v2/users',
+                url: 'http://safeapp.appwebstage.com/api_v2/auth/login',
                 async: true,
                 crossDomain: true,
                 method: 'POST',
                 data: {
-                    "username": username,
-                    "email": email,
-                    "password": password
-                },
-                headers: {
-                    "authorization": "Basic "+btoa('user1:user1')
+                    "u": username,
+                    "p": password
                 },
                 beforeSend: function(xhr) {},
                 error: function(xhr, status) {
-                    myApp.alert("User not found");
+                    myApp.alert("Error "+status+": Could not Login.");
                 },
                 success: function(data, status, xhr) {
                     var user = JSON.parse(data);
                     if (user.id) {
+                        localStorage.setItem("userData",JSON.stringify(user));
                         mainView.router.load({ url: 'introduction.html' });
                         window.localStorage.setItem('loggedin', true);
                         myApp.hidePreloader();
@@ -271,7 +187,7 @@ var hybridapp = {
                         myApp.alert("User not found");
                     }
                 }
-            })
+            });
         } else {
             myApp.hidePreloader();
             myApp.alert('Valid credentials required . . .');
@@ -371,17 +287,16 @@ var hybridapp = {
         function onSuccess(position) {
             content += '<a href="https://maps.google.com/?q=' + position.coords.latitude + ',' + position.coords.longitude + '" target="_blank">' + position.coords.latitude + ',' + position.coords.longitude + '</a>';
             $$.ajax({
-                url: 'http://safeapp898956.epareto.com/wp-json/wp/v2/safeappticket/',
+                url: 'http://safeapp.appwebstage.com/api_v2/ticket/set',
                 async: true,
                 crossDomain: true,
                 method: 'POST',
                 data: {
-                    "title": title,
-                    "content": content,
-                    "excerpt": excerpt
+                    "ticket_type": 1,
+                    "ticket_location": content
                 },
                 headers: {
-                    "authorization": "Basic "+btoa('user1:user1')
+                    "X-USER": JSON.parse(localStorage.getItem("userData")).user_id
                 },
                 beforeSend: function(xhr) {},
                 error: function(xhr, status) {
@@ -397,7 +312,8 @@ var hybridapp = {
                 },
                 success: function(data, status, xhr) {
                     myApp.hidePreloader();
-                    var results = JSON.parse(data);
+                    console.log(data);
+                    var results = data;
                     if (type == "emergency") {
                         $$('a.emergency').addClass('disabled');
                         window.localStorage.setItem('emergencyinprogress', "true");
@@ -408,6 +324,7 @@ var hybridapp = {
                     }
 
                     savedIncidents.push(results);
+                    localStorage.setItem("current_ticket",results);
                     window.localStorage.setItem('savedincident', JSON.stringify(savedIncidents));
                 }
             });
@@ -561,7 +478,14 @@ myApp.onPageInit('introduction', function(page) {
     });
 });
 
+myApp.onPageInit('change_account', function (page) {
+    $$('#switchAccountId').on('click', function () {
+        myApp.alert("Account has been switched successfully!");
+    });
+});
+
 myApp.onPageInit('dashboard', function(page) {
+    localStorage.setItem("msgCount",0);
     $$('.floating-button').on('click', function() {
         var clickedLink = this;
         myApp.popover('.dial-popover', clickedLink);
@@ -615,7 +539,51 @@ myApp.onPageInit('dashboard', function(page) {
     $$('#chat').on('click', function() {
         myApp.closeModal();
         mainView.router.load({ url: 'chat.html' });
+         window.setInterval(function(){
+            var tkt = localStorage.getItem("current_ticket");
+            fetchChat(tkt);
+        },4000)
     });
+
+    $$('#switchAccount').on('click', function () {
+        myApp.closeModal();
+        mainView.router.load({ url: 'change_account.html' });
+    });
+
+    // link to track_help map page
+    $$('#track_help').on('click', function () {
+        myApp.closeModal();
+        mainView.router.load({ url: 'track_help.html' });
+    });
+
+    // link to nearest police station
+    $$('#police_station').on('click', function () {
+        myApp.closeModal();
+        mainView.router.load({ url: 'nearest_police_station.html' });
+    });
+    var map;
+
+        //Inject element
+        // $$('head').append("<script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAnLmPtiLZFALqHJpPD5IeDYAI1xtqZ5x0&callback=initMap' async defer ></script >");
+        // $$('head').append("<script src='js/map.js'></script>");
+
+    $$(document).on('page:init', '.page[data-page="police_station"]', function (e) {
+        initMap();
+    });
+
+
+    // link to device tracker
+    $$('#device_tracker').on('click', function () {
+        myApp.closeModal();
+        mainView.router.load({ url: 'device_tracker.html' });
+    });
+
+
+
+
+
+    
+
     
     $$('#logout').on('click', function() {
         myApp.closeModal();
@@ -629,11 +597,39 @@ myApp.onPageInit('dashboard', function(page) {
 });
 
 
-    $$('#completeAction').on('click',function(){
-        myApp.prompt("Please enter your PIN to confirm");
-        console.log("completed")
-    });
-
+    
+function completeAction(pin){
+    
+        if(pin == "5566"){
+            $$.ajax({
+        url: "http://safeapp.appwebstage.com/api_v2/ticket/edit",
+        method: "POST",
+        async: true,
+        crossDomain: true,
+        data: {"ticket_number":localStorage.getItem("current_ticket"),"field":"status_id","value":"2"},
+        success: function(data,status,xhr){
+            if(data == 1 || data == "1"){
+                myApp.alert("Ticket resolved");
+                $$('#completeAction').css("display","none");
+                $$('#clearTicket').on("click",function(){
+                    if(localStorage.getItem('emergencyinprogress')){
+                        localStorage.removeItem('emergencyinprogress');
+                    }
+                    if(localStorage.getItem('emergencyinprogress')){
+                        localStorage.removeItem('firstaidinprogress');
+                    }
+                    mainView.router.load({ url: 'dashboard.html' });
+                })
+                $$('#clearTicket').css('display','initial');
+                $$("[data-indicate='resolved']").removeClass("incomplete").addClass("complete");
+            }
+        }
+            })
+        }
+        else {
+            myApp.alert("failed");
+        }
+}
 myApp.onPageInit('sendaction', function(page) {
     if (window.localStorage.getItem('emergencyinprogress') == "true") {
         $$('a.emergency').addClass('disabled');
@@ -654,6 +650,43 @@ myApp.onPageInit('sendaction', function(page) {
     if (window.localStorage.getItem('emergencyinprogress') == "true" && window.localStorage.getItem('firstaidinprogress') == "true") {
         $$('.content-block-title').text('IN PROGRESS . . .');
     }
+    
+    $$('#completeAction').on('click',function(){
+        myApp.prompt("Please enter your PIN to confirm","PIN Required",completeAction,function(){return;});
+    });
+    
+    $$.ajax({
+        url: "http://safeapp.appwebstage.com/api_v2/ticket/get",
+        method: "POST",
+        async: true,
+        crossDomain: true,
+        data: {"ticket_number":localStorage.getItem("current_ticket")},
+        success: function(data,status,xhr){
+            data = JSON.parse(data);
+            var ticketStatus = data.status_id;
+            var classArray;
+            if(ticketStatus == "6"){
+                classArray = {"sent":"complete","seen":"incomplete","started":"incomplete","resolved":"incomplete"}
+            }
+            
+            else{
+                if(ticketStatus == "1"){
+                classArray = {"sent":"complete","seen":"complete","started":"complete","resolved":"incomplete"}
+            }
+            else {
+                classArray = {"sent":"complete","seen":"complete","started":"complete","resolved":"complete"}
+                $$('#completeAction').css("display","none");
+            }
+            }
+            
+            $$("[data-indicate]").each(function(){
+                $$(this).removeClass("incomplete");
+                $$(this).addClass(classArray[$$(this).attr("data-indicate")])
+            })
+                
+        }
+    })
+
 });
 
 myApp.onPageInit('processalert', function(page) {

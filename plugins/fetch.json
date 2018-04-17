@@ -1,12 +1,4 @@
 {
-  "cordova-plugin-whitelist": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-plugin-whitelist@1"
-    },
-    "is_top_level": true,
-    "variables": {}
-  },
   "cordova-plugin-dialogs": {
     "source": {
       "type": "registry",
@@ -23,20 +15,10 @@
     "is_top_level": true,
     "variables": {}
   },
-  "cordova-plugin-googlemaps": {
+  "cordova-plugin-whitelist": {
     "source": {
       "type": "registry",
-      "id": "cordova-plugin-googlemaps"
-    },
-    "is_top_level": true,
-    "variables": {
-      "API_KEY_FOR_ANDROID": "AIzaSyAnLmPtiLZFALqHJpPD5IeDYAI1xtqZ5x0"
-    }
-  },
-  "cordova-plugin-call-number": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-plugin-call-number"
+      "id": "cordova-plugin-whitelist@1.3.3"
     },
     "is_top_level": true,
     "variables": {}

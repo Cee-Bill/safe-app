@@ -467,10 +467,14 @@ i.icon.icon-missing {
 }
 
 .inner-button-circle {
-    border-radius: 50%;
-    background-image: -moz-linear-gradient( 90deg, rgb(243, 107, 107) 0%, rgb(253, 0, 0) 100%);
-    background-image: -webkit-linear-gradient( 90deg, rgb(243, 107, 107) 0%, rgb(253, 0, 0) 100%);
-    background-image: -ms-linear-gradient( 90deg, rgb(243, 107, 107) 0%, rgb(253, 0, 0) 100%);
+    /* border-radius: 50%; */
+    border-radius: 15%;
+    /* background-image: -moz-linear-gradient( 90deg, rgb(243, 107, 107) 0%, rgb(253, 0, 0) 100%); */
+    background-image: -moz-linear-gradient( 90deg, rgb(249, 179, 131) 0%, rgb(249, 103, 3) 100%);
+    /* background-image: -webkit-linear-gradient( 90deg, rgb(243, 107, 107) 0%, rgb(253, 0, 0) 100%); */
+    background-image: -webkit-linear-gradient( 90deg, rgb(249, 179, 131) 0%, rgb(249, 103, 3) 100%);
+    /* background-image: -ms-linear-gradient( 90deg, rgb(243, 107, 107) 0%, rgb(253, 0, 0) 100%); */
+    background-image: -ms-linear-gradient( 90deg, rgb(249, 179, 131) 0%, rgb(249, 103, 3) 100%);
     box-shadow: 0px 1px 0px 0px rgba(255, 107, 107, 0.004), inset 0px 5px 5px 0px rgba(245, 18, 18, 0.004);
     position: absolute;
     width: 180px;
@@ -494,10 +498,14 @@ i.icon.icon-missing {
 }
 
 .outer-button-circle {
-    border-radius: 50%;
-    background-image: -moz-linear-gradient( 90deg, rgb(246, 24, 24) 0%, rgb(247, 104, 104) 100%);
-    background-image: -webkit-linear-gradient( 90deg, rgb(246, 25, 25) 0%, rgb(247, 104, 104) 100%);
-    background-image: -ms-linear-gradient( 90deg, rgb(246, 25, 25) 0%, rgb(247, 104, 104) 100%);
+    /* border-radius: 50%; */
+    border-radius: 15%;
+    /* background-image: -moz-linear-gradient( 90deg, rgb(246, 24, 24) 0%, rgb(247, 104, 104) 100%); */
+    background-image: -moz-linear-gradient( 90deg, rgb(244, 121, 37) 0%, rgb(247, 146, 77) 100%);
+    /* background-image: -webkit-linear-gradient( 90deg, rgb(246, 25, 25) 0%, rgb(247, 104, 104) 100%); */
+    background-image: -webkit-linear-gradient( 90deg, rgb(244, 121, 37) 0%, rgb(247, 146, 77) 100%);
+    /* background-image: -ms-linear-gradient( 90deg, rgb(246, 25, 25) 0%, rgb(247, 104, 104) 100%); */
+    background-image: -ms-linear-gradient( 90deg, rgb(244, 121, 37) 0%, rgb(247, 146, 77) 100%);
     box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
     position: relative;
     width: 220px;
@@ -533,6 +541,37 @@ i.icon.icon-checkin {
     height: 24px;
     background-image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA0OTUgNDk1IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0OTUgNDk1OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMnB4IiBoZWlnaHQ9IjUxMnB4Ij4KPGc+Cgk8cGF0aCBzdHlsZT0iZmlsbDojQ0QyQTAwOyIgZD0iTTM2MC41NywyMjYuMTRjMi44MTksMCw1LjYxNiwwLjA5OCw4LjM5MywwLjI3YzIuODM5LTEyLjk5OSw0LjI3Ny0yNi4zMDIsNC4yNzctMzkuNzg5ICAgYzAtMTAyLjktODMuNzItMTg2LjYyLTE4Ni42Mi0xODYuNjJ2MTA0LjRjNDQuMTEsMCw4MCwzNS44OCw4MCw4MGMwLDQ0LjExLTM1Ljg5LDgwLTgwLDgwdjIyMS45bDUzLjE0LTY2LjgxMyAgIGMtOC43MTctMTcuODAyLTEzLjYyLTM3Ljc5Ny0xMy42Mi01OC45MThDMjI2LjE0MSwyODYuNDQ1LDI4Ni40NDUsMjI2LjE0LDM2MC41NywyMjYuMTR6Ii8+Cgk8cGF0aCBzdHlsZT0iZmlsbDojRDhEN0RBOyIgZD0iTTI2Ni42MiwxODQuNDAxYzAtNDQuMTItMzUuODktODAtODAtODB2MTYwQzIzMC43MywyNjQuNDAxLDI2Ni42MiwyMjguNTExLDI2Ni42MiwxODQuNDAxeiIvPgoJPHBhdGggc3R5bGU9ImZpbGw6I0ZGMzUwMTsiIGQ9Ik0xMDYuNjIsMTg0LjQwMWMwLTQ0LjEyLDM1Ljg5LTgwLDgwLTgwVjAuMDAxQzgzLjcyLDAuMDAxLDAsODMuNzIxLDAsMTg2LjYyMSAgIGMwLDQyLjM3LDEzLjksODIuMzMsNDAuMjMsMTE1LjYybDE0Ni4zOSwxODQuMDZ2LTIyMS45QzE0Mi41MSwyNjQuNDAxLDEwNi42MiwyMjguNTExLDEwNi42MiwxODQuNDAxeiIvPgoJPHBhdGggc3R5bGU9ImZpbGw6I0ZGRkZGRjsiIGQ9Ik0xMDYuNjIsMTg0LjQwMWMwLDQ0LjExLDM1Ljg5LDgwLDgwLDgwdi0xNjBDMTQyLjUxLDEwNC40MDEsMTA2LjYyLDE0MC4yODEsMTA2LjYyLDE4NC40MDF6Ii8+Cgk8cGF0aCBzdHlsZT0iZmlsbDojRkZEQTQ0OyIgZD0iTTM0OC4xMjIsNDIyLjE3NGwtNjIuMzQzLTYyLjM0M2wyOC4yODQtMjguMjg0bDM0LjA1OSwzNC4wNTlsMTIuNDQ4LTEyLjQ0OFYyMjYuMTQgICBjLTc0LjEyNSwwLTEzNC40Myw2MC4zMDUtMTM0LjQzLDEzNC40MjljMCwyMS4xMjEsNC45MDIsNDEuMTE3LDEzLjYyLDU4LjkxOGMyMS44NzUsNDQuNjczLDY3LjgwNiw3NS41MTEsMTIwLjgxLDc1LjUxMXYtODUuMjczICAgTDM0OC4xMjIsNDIyLjE3NHoiLz4KCTxwYXRoIHN0eWxlPSJmaWxsOiNGRkNEMDA7IiBkPSJNMzY4Ljk2MywyMjYuNDFjLTIuNzc3LTAuMTcyLTUuNTczLTAuMjctOC4zOTMtMC4yN3YxMjcuMDE4bDQwLjA1MS00MC4wNTFsMjguMjg0LDI4LjI4NCAgIGwtNjguMzM1LDY4LjMzNXY4NS4yNzNjNzQuMTI1LDAsMTM0LjQzLTYwLjMwNSwxMzQuNDMtMTM0LjQyOUM0OTUsMjg5LjI2NCw0MzkuMTkzLDIzMC43NTgsMzY4Ljk2MywyMjYuNDF6Ii8+Cgk8cG9seWdvbiBzdHlsZT0iZmlsbDojMjQ4OEZGOyIgcG9pbnRzPSIzMTQuMDYzLDMzMS41NDcgMjg1Ljc3OSwzNTkuODMxIDM0OC4xMjIsNDIyLjE3NCAzNjAuNTcsNDA5LjcyNiA0MjguOTA1LDM0MS4zOTEgICAgNDAwLjYyMSwzMTMuMTA3IDM2MC41NywzNTMuMTU4IDM0OC4xMjIsMzY1LjYwNiAgIi8+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==);
 }
+
+i.icon.icon-ploicestation {
+    width: 24px;
+    height: 24px;
+    background-image: url(../img/police-station.jpg);
+}
+
+i.icon.icon-emergencycall {
+    width: 24px;
+    height: 24px;
+    background-image: url(../img/emergency-call.jpg);
+}
+
+i.icon.icon-chats {
+    width: 24px;
+    height: 24px;
+    background-image: url(../img/livechat.png);
+}
+
+i.icon.icon-tracker {
+    width: 24px;
+    height: 24px;
+    background-image: url(../img/tracker.png);
+}
+
+i.icon.icon-trackinghelp {
+    width: 24px;
+    height: 24px;
+    background-image: url(../img/trackinghelp.png);
+}
+
 
 i.icon.icon-plus {
     background-image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTguMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ4OS40MTggNDg5LjQxOCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDg5LjQxOCA0ODkuNDE4OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjMycHgiIGhlaWdodD0iMzJweCI+CjxnPgoJPHBhdGggZD0iTTI0NC43MDksMzg5LjQ5NmMxOC43MzYsMCwzNC4zMzItMTQuMzU1LDM1LjkxLTMzLjAyNmwyNC4zNTktMjkwLjkyN2MxLjQxOC0xNi44NzMtNC4zMDMtMzMuNTUzLTE1Ljc1Ni00Ni4wMTEgICBDMjc3Ljc4Myw3LjA5LDI2MS42MjksMCwyNDQuNzA5LDBzLTMzLjA3NCw3LjA5LTQ0LjUxNCwxOS41MzJDMTg4Ljc0LDMxLjk5LDE4My4wMjIsNDguNjcsMTg0LjQ0LDY1LjU0M2wyNC4zNTksMjkwLjkyNyAgIEMyMTAuMzc3LDM3NS4xNDEsMjI1Ljk3MywzODkuNDk2LDI0NC43MDksMzg5LjQ5NnoiIGZpbGw9IiMwMDAwMDAiLz4KCTxwYXRoIGQ9Ik0yNDQuNzA5LDQxMC45MDhjLTIxLjY4NCwwLTM5LjI1NiwxNy41NzEtMzkuMjU2LDM5LjI1NmMwLDIxLjY4MywxNy41NzIsMzkuMjU0LDM5LjI1NiwzOS4yNTQgICBzMzkuMjU2LTE3LjU3MSwzOS4yNTYtMzkuMjU0QzI4My45NjUsNDI4LjQ3OSwyNjYuMzkzLDQxMC45MDgsMjQ0LjcwOSw0MTAuOTA4eiIgZmlsbD0iIzAwMDAwMCIvPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=);
@@ -1131,3 +1170,81 @@ h1 {
     border: none;
     outline: none;
 }
+
+
+
+/* General Style Rules */
+/* .flex-display {
+    display: inline-flex !important;
+}
+
+.pad-left {
+    padding-left: 16px !important;
+}
+
+.navbar {
+    height: 9%;
+} */
+
+/*** #sideMenuHolder & popover-floating-button style rules ***/
+/* div#sideMenuHolder {
+    width: 0 !important;
+    height: 100% !important;
+    top: 0 !important;
+    left: 194.4px !important;
+    padding-top: 20px !important;
+    z-index: 1 !important;
+    opacity: 0.9 !important;
+    transition: 0.3s !important;
+    background-color: #808080 !important;
+} */
+/* div.side-menu-holder {
+    height: 100% !important;
+    width: 80vw !important;
+    display: block !important;
+    right: 1px !important;
+    transition: 0.3s !important;
+
+} */
+
+
+/* Navbar on data pages style rules */
+div.page>div.navbar>div.navbar-inner>div.left {
+    border-right: 1px outset #ffdead !important;
+}
+
+/*** TRack my help style rules***/
+div.map-holder {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+div#map {
+    height: 100%;
+}
+
+/* Remove box shadow on dashboard */
+/* a#popUpMenu {
+    box-shadow: none !important;
+} */
+
+/* style logo on navbar */
+.navbar-img {
+    width: 49px;
+    height: 61px;
+    padding-top: 5px;
+}
+
+/* Nearest Police Stations */
+.map-container {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+}
+
+  .map {
+    height: 100%;
+    width: 100%;
+  }

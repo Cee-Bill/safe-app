@@ -1,4 +1,4 @@
-#Mon Mar 05 17:25:14 WET 2018
+#Tue Apr 17 15:22:11 GMT 2018
 base.0=C\:\\Users\\jonathan\\Documents\\safeapp\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
 renamed.0=classes.dex
 file.0=C\:\\Users\\jonathan\\Documents\\safeapp\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0\\classes.dex

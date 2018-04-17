@@ -23,29 +23,26 @@
                 </div>
                 <div class="indicators">
                     <ol class="list-inline text-center step-indicator">
-                        <li class="complete">
+                        <li class="incomplete" data-indicate="sent">
                             <div class="step"><i class="icon icon-check"></i></div>
                             <div class="caption">Sent</div>
                         </li>
-                        <li class="complete">
+                        <li class="incomplete" data-indicate="seen">
                             <div class="step"><i class="icon icon-check"></i></div>
                             <div class="caption">Seen</div>
                         </li>
-                        <li class="complete">
+                        <li class="incomplete" data-indicate="started">
                             <div class="step"><i class="icon icon-check"></i></div>
                             <div class="caption">Started</div>
                         </li>
-                        <li class="incomplete">
-                            <div class="step"><i class="icon icon-pending"></i></div>
-                            <div class="caption">Completed</div>
+                        <li class="incomplete" data-indicate="resolved">
+                            <div class="step"><i class="icon icon-check"></i></div>
+                            <div class="caption">Resolved</div>
                         </li>
                     </ol>
                 </div>
-                <div class="userActions">
-                    <a class="uActionBtn" id="imSafeBtn"> IM SAFE </a>
-                    <a class="uActionBtn" id="completeAction"> COMPLETE </a>
-                       
-                </div>
+                <button class="btn btn-warning" id="completeAction">Resolved</button>
+                <button class="btn btn-warning" id="clearTicket" style="display:none">Clear ticket</button>
             </div>
             <a href="processaid.html" class="ripple ripple-white first-aid">
                 <img src="img/send-medic.png" alt="">
@@ -59,21 +56,21 @@
                 </div>
                 <div class="indicators">
                     <ol class="list-inline text-center step-indicator aid">
-                        <li class="complete">
+                        <li class="incomplete" data-indicate="sent">
                             <div class="step"><i class="icon icon-check"></i></div>
                             <div class="caption">Sent</div>
                         </li>
-                        <li class="complete">
+                        <li class="incomplete" data-indicate="seen">
                             <div class="step"><i class="icon icon-check"></i></div>
                             <div class="caption">Seen</div>
                         </li>
-                        <li class="complete">
+                        <li class="incomplete" data-indicate="started">
                             <div class="step"><i class="icon icon-check"></i></div>
                             <div class="caption">Started</div>
                         </li>
-                        <li class="incomplete">
-                            <div class="step"><i class="icon icon-pending"></i></div>
-                            <div class="caption">Completed</div>
+                        <li class="incomplete" data-indicate="resolved">
+                            <div class="step"><i class="icon icon-check"></i></div>
+                            <div class="caption">Resolved</div>
                         </li>
                     </ol>
                 </div>

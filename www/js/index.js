@@ -126,85 +126,6 @@ var hybridapp = {
             }
         });
     },
-    firebaseInit: function() {
-        // Initialize Firebase
-        var config = {
-            apiKey: "AIzaSyAzNF_kM3c5SR72ruvPbw3kP6hKRjdcUEw",
-            authDomain: "safeapp-aabb7.firebaseapp.com",
-            databaseURL: "https://safeapp-aabb7.firebaseio.com",
-            projectId: "safeapp-aabb7",
-            storageBucket: "safeapp-aabb7.appspot.com",
-            messagingSenderId: "74614122239"
-        };
-        firebase.initializeApp(config);
-    },
-    firebaseUIInit: function() {
-        // FirebaseUI config.
-        var uiConfig = {
-            signInSuccessUrl: 'login.html',
-            signInOptions: [
-                firebase.auth.PhoneAuthProvider.PROVIDER_ID
-            ],
-            // Terms of service url.
-            tosUrl: 'terms.html'
-        };
-
-        // Initialize the FirebaseUI Widget using Firebase.
-        var ui = new firebaseui.auth.AuthUI(firebase.auth());
-        // The start method will wait until the DOM is loaded.
-        ui.start('#app', uiConfig);
-        hybridapp.monitorAuthState();
-    },
-    registerAuthProvider: function() {
-        var provider = new firebase.auth.GoogleAuthProvider();
-        firebase.auth().signInWithRedirect(provider).then(function() {
-            firebase.auth().getRedirectResult().then(function(result) {
-                // This gives you a Google Access Token.
-                // You can use it to access the Google API.
-                var token = result.credential.accessToken;
-                // The signed-in user info.
-                var user = result.user;
-                // ...
-                if (user) {
-                    console.log(user);
-                    document.getElementById('body').classList = 'framework7-root verified';
-                    if (window.localStorage.getItem('loggedin')) {
-                        mainView.router.load({ url: 'dashboard.html' });
-                    } else {
-                        mainView.router.load({ url: 'login.html' });
-                        window.localStorage.setItem('loggedin', false);
-                    }
-                } else {
-                    // User is signed out.
-                    document.getElementById('body').classList = 'framework7-root signout';
-                }
-            }).catch(function(error) {
-                // Handle Errors here.
-                var errorCode = error.code;
-                var errorMessage = error.message;
-            });
-        });
-        hybridapp.monitorAuthState();
-    },
-    monitorAuthState: function() {
-        firebase.auth().onAuthStateChanged(function(user) {
-            if (user) {
-                console.log(user);
-                document.getElementById('body').classList = 'framework7-root verified';
-                if (window.localStorage.getItem('loggedin')) {
-                    mainView.router.load({ url: 'dashboard.html' });
-                } else {
-                    mainView.router.load({ url: 'login.html' });
-                    window.localStorage.setItem('loggedin', false);
-                }
-            } else {
-                // User is signed out.
-                document.getElementById('body').classList = 'framework7-root signout';
-            }
-        }, function(error) {
-            console.log(error);
-        });
-    },
     otherContactTpl: function(contact) {
         var id = contact.id,
             phoneNumber = contact.phoneNumbers ? contact.phoneNumbers[0].value : contact.displayName,
@@ -236,9 +157,9 @@ var hybridapp = {
     signUpUser: function(page) {
 
         var username = $$(page.container).find('#email').val();
-        
         var password = $$(page.container).find('#password').val();
-
+        myApp.hidePreloader();
+        myApp.alert(username+"----"+password);
 
         if (username.length > 0 && password.length > 0) {
             $$.ajax({
@@ -252,7 +173,7 @@ var hybridapp = {
                 },
                 beforeSend: function(xhr) {},
                 error: function(xhr, status) {
-                    myApp.alert("Could not Login");
+                    myApp.alert("Error "+status+": Could not Login.");
                 },
                 success: function(data, status, xhr) {
                     var user = JSON.parse(data);
@@ -266,7 +187,7 @@ var hybridapp = {
                         myApp.alert("User not found");
                     }
                 }
-            })
+            });
         } else {
             myApp.hidePreloader();
             myApp.alert('Valid credentials required . . .');

@@ -7,22 +7,13 @@
     "files": {}
   },
   "installed_plugins": {
-    "cordova-plugin-whitelist": {
-      "PACKAGE_NAME": "com.epareto.safeapp"
-    },
     "cordova-plugin-dialogs": {
       "PACKAGE_NAME": "com.epareto.safeapp"
     },
     "cordova-plugin-geolocation": {
       "PACKAGE_NAME": "com.epareto.safeapp"
     },
-    "cordova-plugin-googlemaps": {
-      "API_KEY_FOR_ANDROID": "AIzaSyAnLmPtiLZFALqHJpPD5IeDYAI1xtqZ5x0",
-      "PLAY_SERVICES_VERSION": "12.0.0",
-      "ANDROID_SUPPORT_V4_VERSION": "24.1.0",
-      "PACKAGE_NAME": "com.epareto.safeapp"
-    },
-    "cordova-plugin-call-number": {
+    "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "com.epareto.safeapp"
     }
   },
