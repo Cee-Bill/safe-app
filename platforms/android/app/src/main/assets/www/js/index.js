@@ -36,6 +36,15 @@ var hybridapp = {
 
         }
         
+        if( window.plugins && window.plugins.NativeAudio ) {
+	
+	// Preload audio resources
+	window.plugins.NativeAudio.preloadComplex( 'panicalert', 'audio/alert.mp3', 1, 1, 0, function(msg){
+	}, function(msg){
+		console.log( 'error: ' + msg );
+	});
+    }
+        
         document.addEventListener("volumedownbutton", onVolumeDownKeyDown, false);
         myApp.waitTimerCount = 0;
         function onVolumeDownKeyDown() {
@@ -43,12 +52,12 @@ var hybridapp = {
             setTimeout(function(){myApp.waitTimerCount = 0},2000)
             if(myApp.waitTimerCount >= 3){
                 myApp.alert("You activated the panic alarm");
-                var audio = $$("<audio></audio>");
-                audio.attr("src","js/alert.mp3");
-                audio.attr("id","alertsound");
-                audio.css("display","none");
-                $$("body").append(audio);
-                document.getElementById("alertsound").play();
+                window.plugins.NativeAudio.loop( 'panicalert' );
+                window.setTimeout( function(){
+
+		window.plugins.NativeAudio.stop( 'panicalert' );
+
+	}, 1000 * 60 );
             }
         }
 
@@ -533,6 +542,11 @@ myApp.onPageInit('dashboard', function(page) {
             hybridapp.pickContactAndSendSMS();
         }
     });
+    
+    $$("#callEmergency").on('click',function(){
+        myApp.closeModal();
+        window.plugins.CallNumber.callNumber(function(){}, function(){}, '112', false);
+    })
     
     
     $$('#mylocation').on('click', function() {

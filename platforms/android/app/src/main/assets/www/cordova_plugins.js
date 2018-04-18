@@ -106,6 +106,62 @@ module.exports = [
     "merges": [
       ""
     ]
+  },
+  {
+    "id": "cordova-plugin-sms.SMS",
+    "file": "plugins/cordova-plugin-sms/www/SMS.js",
+    "pluginId": "cordova-plugin-sms",
+    "clobbers": [
+      "window.SMS"
+    ]
+  },
+  {
+    "id": "cordova-plugin-nativeaudio.nativeaudio",
+    "file": "plugins/cordova-plugin-nativeaudio/www/nativeaudio.js",
+    "pluginId": "cordova-plugin-nativeaudio",
+    "clobbers": [
+      "window.plugins.NativeAudio"
+    ]
+  },
+  {
+    "id": "cordova-plugin-device.device",
+    "file": "plugins/cordova-plugin-device/www/device.js",
+    "pluginId": "cordova-plugin-device",
+    "clobbers": [
+      "device"
+    ]
+  },
+  {
+    "id": "cordova-plugin-badge.Badge",
+    "file": "plugins/cordova-plugin-badge/www/badge.js",
+    "pluginId": "cordova-plugin-badge",
+    "clobbers": [
+      "cordova.plugins.notification.badge"
+    ]
+  },
+  {
+    "id": "cordova-plugin-local-notification.LocalNotification",
+    "file": "plugins/cordova-plugin-local-notification/www/local-notification.js",
+    "pluginId": "cordova-plugin-local-notification",
+    "clobbers": [
+      "cordova.plugins.notification.local"
+    ]
+  },
+  {
+    "id": "cordova-plugin-call-number.CallNumber",
+    "file": "plugins/cordova-plugin-call-number/www/CallNumber.js",
+    "pluginId": "cordova-plugin-call-number",
+    "clobbers": [
+      "call"
+    ]
+  },
+  {
+    "id": "cordova-sms-plugin.Sms",
+    "file": "plugins/cordova-sms-plugin/www/sms.js",
+    "pluginId": "cordova-sms-plugin",
+    "clobbers": [
+      "window.sms"
+    ]
   }
 ];
 module.exports.metadata = 
@@ -113,8 +169,15 @@ module.exports.metadata =
 {
   "cordova-plugin-dialogs": "2.0.1",
   "cordova-plugin-geolocation": "4.0.1",
+  "cordova-plugin-contacts": "3.0.1",
   "cordova-plugin-whitelist": "1.3.3",
-  "cordova-plugin-contacts": "3.0.1"
+  "cordova-plugin-sms": "1.0.5",
+  "cordova-plugin-nativeaudio": "3.0.9",
+  "cordova-plugin-device": "2.0.2",
+  "cordova-plugin-badge": "0.8.7",
+  "cordova-plugin-local-notification": "0.9.0-beta.3",
+  "cordova-plugin-call-number": "1.0.1",
+  "cordova-sms-plugin": "0.1.11"
 };
 // BOTTOM OF METADATA
 });
