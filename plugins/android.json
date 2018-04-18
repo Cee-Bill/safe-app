@@ -12,6 +12,9 @@
     },
     "cordova-plugin-geolocation": {
       "PACKAGE_NAME": "com.epareto.safeapp"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.epareto.safeapp"
     }
   },
   "dependent_plugins": {}

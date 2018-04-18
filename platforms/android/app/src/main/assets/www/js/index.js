@@ -164,8 +164,6 @@ var hybridapp = {
 
         var username = $$(page.container).find('#email').val();
         var password = $$(page.container).find('#password').val();
-        myApp.hidePreloader();
-        myApp.alert(username+"----"+password);
 
         if (username.length > 0 && password.length > 0) {
             $$.ajax({
