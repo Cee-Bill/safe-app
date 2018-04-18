@@ -22,5 +22,45 @@
     },
     "is_top_level": true,
     "variables": {}
+  },
+  "cl.rmd.cordova.dialoggps": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-dialog-gps"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "de.appplant.cordova.plugin.local-notification": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-local-notifications@^1.0.0"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-local-notification": {
+    "source": {
+      "type": "registry",
+      "id": "https://github.com/katzer/cordova-plugin-local-notifications.git"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-device": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-device"
+    },
+    "is_top_level": false,
+    "variables": {}
+  },
+  "cordova-plugin-contacts": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-contacts@3.0.1"
+    },
+    "is_top_level": true,
+    "variables": {}
   }
 }
