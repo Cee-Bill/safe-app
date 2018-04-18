@@ -13,7 +13,7 @@
     "cordova-plugin-geolocation": {
       "PACKAGE_NAME": "com.epareto.safeapp"
     },
-    "cordova-plugin-whitelist": {
+    "cordova-plugin-contacts": {
       "PACKAGE_NAME": "com.epareto.safeapp"
     }
   },
