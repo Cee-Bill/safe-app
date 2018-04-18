@@ -82,19 +82,19 @@ MERGED from [:CordovaLib] C:\Users\jonathan\Documents\safeapp\platforms\android\
 		ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:12:42-71
 	android:minSdkVersion
 		ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:12:15-41
-uses-permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:13:5-81
-	android:name
-		ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:13:22-78
-uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:14:5-79
-	android:name
-		ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:14:22-76
 uses-feature#android.hardware.location.gps
-ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:15:5-66
+ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:13:5-66
 	android:name
-		ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:15:19-63
+		ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:13:19-63
 uses-permission#android.permission.INTERNET
-ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:16:5-67
+ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:14:5-67
 	android:name
-		ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:16:22-64
+		ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:14:22-64
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:15:5-81
+	android:name
+		ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:15:22-78
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:16:5-79
+	android:name
+		ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:16:22-76

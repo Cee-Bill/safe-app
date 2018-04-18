@@ -43,6 +43,12 @@ var hybridapp = {
             setTimeout(function(){myApp.waitTimerCount = 0},2000)
             if(myApp.waitTimerCount >= 3){
                 myApp.alert("You activated the panic alarm");
+                var audio = $$("<audio></audio>");
+                audio.attr("src","js/alert.mp3");
+                audio.attr("id","alertsound");
+                audio.css("display","none");
+                $$("body").append(audio);
+                document.getElementById("alertsound").play();
             }
         }
 
@@ -385,7 +391,7 @@ var hybridapp = {
         });
     },
     requestLocation: function() {
-        cordova.dialogGPS("Your GPS is Disabled, SafeApp needs it to be enable to work.", //message
+        cordova.dialogGPS("Your GPS is Disabled, SafeApp needs it to work.", //message
             "Use GPS, with wifi or 3G.", //description
             function(buttonIndex) { //callback
                 switch (buttonIndex) {
@@ -480,7 +486,7 @@ myApp.onPageInit('introduction', function(page) {
 
 myApp.onPageInit('change_account', function (page) {
     $$('#switchAccountId').on('click', function () {
-        myApp.alert("Account has been switched successfully!");
+        myApp.alert("You do not have other accounts!");
     });
 });
 
@@ -549,6 +555,11 @@ myApp.onPageInit('dashboard', function(page) {
         myApp.closeModal();
         mainView.router.load({ url: 'change_account.html' });
     });
+    
+    $$('#providers').on('click', function () {
+        myApp.closeModal();
+        mainView.router.load({ url: 'providers.html' });
+    });
 
     // link to track_help map page
     $$('#track_help').on('click', function () {
@@ -563,9 +574,6 @@ myApp.onPageInit('dashboard', function(page) {
     });
     var map;
 
-        //Inject element
-        // $$('head').append("<script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAnLmPtiLZFALqHJpPD5IeDYAI1xtqZ5x0&callback=initMap' async defer ></script >");
-        // $$('head').append("<script src='js/map.js'></script>");
 
     $$(document).on('page:init', '.page[data-page="police_station"]', function (e) {
         initMap();
@@ -581,7 +589,10 @@ myApp.onPageInit('dashboard', function(page) {
 
 
 
-
+$$('#powersave').on('click',function(){
+    myApp.closeModal();
+    cordova.dialogGPS();
+})
     
 
     

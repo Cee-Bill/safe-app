@@ -1,4 +1,4 @@
-var query_url = "http://safeapp.com/api_v2/client/thread/";
+var query_url = "http://safeapp.appwebstage.com/api_v2/client/thread/";
 
 function fetchChat(ticket_number){
     $$.ajax({

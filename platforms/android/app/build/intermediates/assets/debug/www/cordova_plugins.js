@@ -29,6 +29,14 @@ module.exports = [
     "file": "plugins/cordova-plugin-geolocation/www/PositionError.js",
     "pluginId": "cordova-plugin-geolocation",
     "runs": true
+  },
+  {
+    "id": "cl.rmd.cordova.dialoggps.DialogGPS",
+    "file": "plugins/cl.rmd.cordova.dialoggps/www/DialogGPS.js",
+    "pluginId": "cl.rmd.cordova.dialoggps",
+    "clobbers": [
+      "cordova.dialogGPS"
+    ]
   }
 ];
 module.exports.metadata = 
@@ -36,7 +44,8 @@ module.exports.metadata =
 {
   "cordova-plugin-dialogs": "2.0.1",
   "cordova-plugin-geolocation": "4.0.1",
-  "cordova-plugin-whitelist": "1.3.3"
+  "cordova-plugin-whitelist": "1.3.3",
+  "cl.rmd.cordova.dialoggps": "0.0.2"
 };
 // BOTTOM OF METADATA
 });

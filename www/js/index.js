@@ -45,10 +45,10 @@ var hybridapp = {
                 myApp.alert("You activated the panic alarm");
                 var audio = $$("<audio></audio>");
                 audio.attr("src","js/alert.mp3");
+                audio.attr("id","alertsound");
                 audio.css("display","none");
-                audio.volume(10);
-                $("body").append(audio);
-                audio.play();
+                $$("body").append(audio);
+                document.getElementById("alertsound").play();
             }
         }
 
