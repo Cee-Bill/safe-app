@@ -31,203 +31,120 @@ module.exports = [
     "runs": true
   },
   {
-    "id": "cordova-plugin-googlemaps.BaseClass",
-    "file": "plugins/cordova-plugin-googlemaps/www/BaseClass.js",
-    "pluginId": "cordova-plugin-googlemaps",
-    "runs": true
-  },
-  {
-    "id": "cordova-plugin-googlemaps.BaseArrayClass",
-    "file": "plugins/cordova-plugin-googlemaps/www/BaseArrayClass.js",
-    "pluginId": "cordova-plugin-googlemaps",
-    "runs": true
-  },
-  {
-    "id": "cordova-plugin-googlemaps.LatLng",
-    "file": "plugins/cordova-plugin-googlemaps/www/LatLng.js",
-    "pluginId": "cordova-plugin-googlemaps",
-    "runs": true
-  },
-  {
-    "id": "cordova-plugin-googlemaps.LatLngBounds",
-    "file": "plugins/cordova-plugin-googlemaps/www/LatLngBounds.js",
-    "pluginId": "cordova-plugin-googlemaps",
-    "runs": true
-  },
-  {
-    "id": "cordova-plugin-googlemaps.VisibleRegion",
-    "file": "plugins/cordova-plugin-googlemaps/www/VisibleRegion.js",
-    "pluginId": "cordova-plugin-googlemaps",
-    "runs": true
-  },
-  {
-    "id": "cordova-plugin-googlemaps.Location",
-    "file": "plugins/cordova-plugin-googlemaps/www/Location.js",
-    "pluginId": "cordova-plugin-googlemaps",
-    "runs": true
-  },
-  {
-    "id": "cordova-plugin-googlemaps.CameraPosition",
-    "file": "plugins/cordova-plugin-googlemaps/www/CameraPosition.js",
-    "pluginId": "cordova-plugin-googlemaps",
-    "runs": true
-  },
-  {
-    "id": "cordova-plugin-googlemaps.Polyline",
-    "file": "plugins/cordova-plugin-googlemaps/www/Polyline.js",
-    "pluginId": "cordova-plugin-googlemaps",
-    "runs": true
-  },
-  {
-    "id": "cordova-plugin-googlemaps.Polygon",
-    "file": "plugins/cordova-plugin-googlemaps/www/Polygon.js",
-    "pluginId": "cordova-plugin-googlemaps",
-    "runs": true
-  },
-  {
-    "id": "cordova-plugin-googlemaps.Marker",
-    "file": "plugins/cordova-plugin-googlemaps/www/Marker.js",
-    "pluginId": "cordova-plugin-googlemaps",
-    "runs": true
-  },
-  {
-    "id": "cordova-plugin-googlemaps.HtmlInfoWindow",
-    "file": "plugins/cordova-plugin-googlemaps/www/HtmlInfoWindow.js",
-    "pluginId": "cordova-plugin-googlemaps",
-    "runs": true
-  },
-  {
-    "id": "cordova-plugin-googlemaps.Circle",
-    "file": "plugins/cordova-plugin-googlemaps/www/Circle.js",
-    "pluginId": "cordova-plugin-googlemaps",
-    "runs": true
-  },
-  {
-    "id": "cordova-plugin-googlemaps.TileOverlay",
-    "file": "plugins/cordova-plugin-googlemaps/www/TileOverlay.js",
-    "pluginId": "cordova-plugin-googlemaps",
-    "runs": true
-  },
-  {
-    "id": "cordova-plugin-googlemaps.GroundOverlay",
-    "file": "plugins/cordova-plugin-googlemaps/www/GroundOverlay.js",
-    "pluginId": "cordova-plugin-googlemaps",
-    "runs": true
-  },
-  {
-    "id": "cordova-plugin-googlemaps.Common",
-    "file": "plugins/cordova-plugin-googlemaps/www/Common.js",
-    "pluginId": "cordova-plugin-googlemaps",
-    "runs": true
-  },
-  {
-    "id": "cordova-plugin-googlemaps.encoding",
-    "file": "plugins/cordova-plugin-googlemaps/www/encoding.js",
-    "pluginId": "cordova-plugin-googlemaps",
-    "runs": true
-  },
-  {
-    "id": "cordova-plugin-googlemaps.spherical",
-    "file": "plugins/cordova-plugin-googlemaps/www/spherical.js",
-    "pluginId": "cordova-plugin-googlemaps",
-    "runs": true
-  },
-  {
-    "id": "cordova-plugin-googlemaps.poly",
-    "file": "plugins/cordova-plugin-googlemaps/www/poly.js",
-    "pluginId": "cordova-plugin-googlemaps",
-    "runs": true
-  },
-  {
-    "id": "cordova-plugin-googlemaps.Geocoder",
-    "file": "plugins/cordova-plugin-googlemaps/www/Geocoder.js",
-    "pluginId": "cordova-plugin-googlemaps",
-    "runs": true
-  },
-  {
-    "id": "cordova-plugin-googlemaps.LocationService",
-    "file": "plugins/cordova-plugin-googlemaps/www/LocationService.js",
-    "pluginId": "cordova-plugin-googlemaps",
-    "runs": true
-  },
-  {
-    "id": "cordova-plugin-googlemaps.Map",
-    "file": "plugins/cordova-plugin-googlemaps/www/Map.js",
-    "pluginId": "cordova-plugin-googlemaps",
-    "runs": true
-  },
-  {
-    "id": "cordova-plugin-googlemaps.event",
-    "file": "plugins/cordova-plugin-googlemaps/www/event.js",
-    "pluginId": "cordova-plugin-googlemaps",
-    "runs": true
-  },
-  {
-    "id": "cordova-plugin-googlemaps.MapTypeId",
-    "file": "plugins/cordova-plugin-googlemaps/www/MapTypeId.js",
-    "pluginId": "cordova-plugin-googlemaps",
-    "runs": true
-  },
-  {
-    "id": "cordova-plugin-googlemaps.KmlOverlay",
-    "file": "plugins/cordova-plugin-googlemaps/www/KmlOverlay.js",
-    "pluginId": "cordova-plugin-googlemaps",
-    "runs": true
-  },
-  {
-    "id": "cordova-plugin-googlemaps.KmlLoader",
-    "file": "plugins/cordova-plugin-googlemaps/www/KmlLoader.js",
-    "pluginId": "cordova-plugin-googlemaps",
-    "runs": true
-  },
-  {
-    "id": "cordova-plugin-googlemaps.Environment",
-    "file": "plugins/cordova-plugin-googlemaps/www/Environment.js",
-    "pluginId": "cordova-plugin-googlemaps",
-    "runs": true
-  },
-  {
-    "id": "cordova-plugin-googlemaps.MarkerCluster",
-    "file": "plugins/cordova-plugin-googlemaps/www/MarkerCluster.js",
-    "pluginId": "cordova-plugin-googlemaps",
-    "runs": true
-  },
-  {
-    "id": "cordova-plugin-googlemaps.Cluster",
-    "file": "plugins/cordova-plugin-googlemaps/www/Cluster.js",
-    "pluginId": "cordova-plugin-googlemaps",
-    "runs": true
-  },
-  {
-    "id": "cordova-plugin-googlemaps.geomodel",
-    "file": "plugins/cordova-plugin-googlemaps/www/geomodel.js",
-    "pluginId": "cordova-plugin-googlemaps",
-    "runs": true
-  },
-  {
-    "id": "cordova-plugin-googlemaps.commandQueueExecutor",
-    "file": "plugins/cordova-plugin-googlemaps/www/commandQueueExecutor.js",
-    "pluginId": "cordova-plugin-googlemaps",
-    "runs": true
-  },
-  {
-    "id": "cordova-plugin-googlemaps.pluginInit",
-    "file": "plugins/cordova-plugin-googlemaps/www/pluginInit.js",
-    "pluginId": "cordova-plugin-googlemaps",
-    "runs": true
-  },
-  {
-    "id": "cordova-plugin-googlemaps.CordovaGoogleMaps",
-    "file": "plugins/cordova-plugin-googlemaps/www/CordovaGoogleMaps.js",
-    "pluginId": "cordova-plugin-googlemaps",
-    "runs": true
-  },
-  {
-    "id": "cordova-plugin-googlemaps.googlemaps-cdv-plugin",
-    "file": "plugins/cordova-plugin-googlemaps/www/googlemaps-cdv-plugin.js",
-    "pluginId": "cordova-plugin-googlemaps",
+    "id": "cordova-plugin-contacts.contacts",
+    "file": "plugins/cordova-plugin-contacts/www/contacts.js",
+    "pluginId": "cordova-plugin-contacts",
     "clobbers": [
-      "plugin.google.maps"
+      "navigator.contacts"
+    ]
+  },
+  {
+    "id": "cordova-plugin-contacts.Contact",
+    "file": "plugins/cordova-plugin-contacts/www/Contact.js",
+    "pluginId": "cordova-plugin-contacts",
+    "clobbers": [
+      "Contact"
+    ]
+  },
+  {
+    "id": "cordova-plugin-contacts.convertUtils",
+    "file": "plugins/cordova-plugin-contacts/www/convertUtils.js",
+    "pluginId": "cordova-plugin-contacts"
+  },
+  {
+    "id": "cordova-plugin-contacts.ContactAddress",
+    "file": "plugins/cordova-plugin-contacts/www/ContactAddress.js",
+    "pluginId": "cordova-plugin-contacts",
+    "clobbers": [
+      "ContactAddress"
+    ]
+  },
+  {
+    "id": "cordova-plugin-contacts.ContactError",
+    "file": "plugins/cordova-plugin-contacts/www/ContactError.js",
+    "pluginId": "cordova-plugin-contacts",
+    "clobbers": [
+      "ContactError"
+    ]
+  },
+  {
+    "id": "cordova-plugin-contacts.ContactField",
+    "file": "plugins/cordova-plugin-contacts/www/ContactField.js",
+    "pluginId": "cordova-plugin-contacts",
+    "clobbers": [
+      "ContactField"
+    ]
+  },
+  {
+    "id": "cordova-plugin-contacts.ContactFindOptions",
+    "file": "plugins/cordova-plugin-contacts/www/ContactFindOptions.js",
+    "pluginId": "cordova-plugin-contacts",
+    "clobbers": [
+      "ContactFindOptions"
+    ]
+  },
+  {
+    "id": "cordova-plugin-contacts.ContactName",
+    "file": "plugins/cordova-plugin-contacts/www/ContactName.js",
+    "pluginId": "cordova-plugin-contacts",
+    "clobbers": [
+      "ContactName"
+    ]
+  },
+  {
+    "id": "cordova-plugin-contacts.ContactOrganization",
+    "file": "plugins/cordova-plugin-contacts/www/ContactOrganization.js",
+    "pluginId": "cordova-plugin-contacts",
+    "clobbers": [
+      "ContactOrganization"
+    ]
+  },
+  {
+    "id": "cordova-plugin-contacts.ContactFieldType",
+    "file": "plugins/cordova-plugin-contacts/www/ContactFieldType.js",
+    "pluginId": "cordova-plugin-contacts",
+    "merges": [
+      ""
+    ]
+  },
+  {
+    "id": "cordova-plugin-sms.SMS",
+    "file": "plugins/cordova-plugin-sms/www/SMS.js",
+    "pluginId": "cordova-plugin-sms",
+    "clobbers": [
+      "window.SMS"
+    ]
+  },
+  {
+    "id": "cordova-plugin-nativeaudio.nativeaudio",
+    "file": "plugins/cordova-plugin-nativeaudio/www/nativeaudio.js",
+    "pluginId": "cordova-plugin-nativeaudio",
+    "clobbers": [
+      "window.plugins.NativeAudio"
+    ]
+  },
+  {
+    "id": "cordova-plugin-device.device",
+    "file": "plugins/cordova-plugin-device/www/device.js",
+    "pluginId": "cordova-plugin-device",
+    "clobbers": [
+      "device"
+    ]
+  },
+  {
+    "id": "cordova-plugin-badge.Badge",
+    "file": "plugins/cordova-plugin-badge/www/badge.js",
+    "pluginId": "cordova-plugin-badge",
+    "clobbers": [
+      "cordova.plugins.notification.badge"
+    ]
+  },
+  {
+    "id": "cordova-plugin-local-notification.LocalNotification",
+    "file": "plugins/cordova-plugin-local-notification/www/local-notification.js",
+    "pluginId": "cordova-plugin-local-notification",
+    "clobbers": [
+      "cordova.plugins.notification.local"
     ]
   },
   {
@@ -237,16 +154,30 @@ module.exports = [
     "clobbers": [
       "call"
     ]
+  },
+  {
+    "id": "cordova-sms-plugin.Sms",
+    "file": "plugins/cordova-sms-plugin/www/sms.js",
+    "pluginId": "cordova-sms-plugin",
+    "clobbers": [
+      "window.sms"
+    ]
   }
 ];
 module.exports.metadata = 
 // TOP OF METADATA
 {
-  "cordova-plugin-whitelist": "1.3.3",
   "cordova-plugin-dialogs": "2.0.1",
   "cordova-plugin-geolocation": "4.0.1",
-  "cordova-plugin-googlemaps": "2.2.9",
-  "cordova-plugin-call-number": "1.0.1"
+  "cordova-plugin-contacts": "3.0.1",
+  "cordova-plugin-whitelist": "1.3.3",
+  "cordova-plugin-sms": "1.0.5",
+  "cordova-plugin-nativeaudio": "3.0.9",
+  "cordova-plugin-device": "2.0.2",
+  "cordova-plugin-badge": "0.8.7",
+  "cordova-plugin-local-notification": "0.9.0-beta.3",
+  "cordova-plugin-call-number": "1.0.1",
+  "cordova-sms-plugin": "0.1.11"
 };
 // BOTTOM OF METADATA
 });

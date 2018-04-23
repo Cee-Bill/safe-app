@@ -27,7 +27,17 @@ var initMap = function () {
             doReverseLocation(position.coords.latitude, position.coords.longitude)
             // = 'Tesano Police Station';
             // places search
+<<<<<<< HEAD
             
+=======
+            var service = new google.maps.places.PlacesService(map);
+            service.nearbySearch({
+                location: pos,
+                radius: 50000,
+                type: ['police']
+            }, callback);
+
+>>>>>>> origin/master
             //places details
 
 

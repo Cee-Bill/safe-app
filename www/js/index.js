@@ -36,6 +36,15 @@ var hybridapp = {
 
         }
         
+        if( window.plugins && window.plugins.NativeAudio ) {
+	
+	// Preload audio resources
+	window.plugins.NativeAudio.preloadComplex( 'panicalert', 'audio/alert.mp3', 1, 1, 0, function(msg){
+	}, function(msg){
+		console.log( 'error: ' + msg );
+	});
+    }
+        
         document.addEventListener("volumedownbutton", onVolumeDownKeyDown, false);
         myApp.waitTimerCount = 0;
         function onVolumeDownKeyDown() {
@@ -43,6 +52,12 @@ var hybridapp = {
             setTimeout(function(){myApp.waitTimerCount = 0},2000)
             if(myApp.waitTimerCount >= 3){
                 myApp.alert("You activated the panic alarm");
+                window.plugins.NativeAudio.loop( 'panicalert' );
+                window.setTimeout( function(){
+
+		window.plugins.NativeAudio.stop( 'panicalert' );
+
+	}, 1000 * 60 );
             }
         }
 
@@ -126,85 +141,6 @@ var hybridapp = {
             }
         });
     },
-    firebaseInit: function() {
-        // Initialize Firebase
-        var config = {
-            apiKey: "AIzaSyAzNF_kM3c5SR72ruvPbw3kP6hKRjdcUEw",
-            authDomain: "safeapp-aabb7.firebaseapp.com",
-            databaseURL: "https://safeapp-aabb7.firebaseio.com",
-            projectId: "safeapp-aabb7",
-            storageBucket: "safeapp-aabb7.appspot.com",
-            messagingSenderId: "74614122239"
-        };
-        firebase.initializeApp(config);
-    },
-    firebaseUIInit: function() {
-        // FirebaseUI config.
-        var uiConfig = {
-            signInSuccessUrl: 'login.html',
-            signInOptions: [
-                firebase.auth.PhoneAuthProvider.PROVIDER_ID
-            ],
-            // Terms of service url.
-            tosUrl: 'terms.html'
-        };
-
-        // Initialize the FirebaseUI Widget using Firebase.
-        var ui = new firebaseui.auth.AuthUI(firebase.auth());
-        // The start method will wait until the DOM is loaded.
-        ui.start('#app', uiConfig);
-        hybridapp.monitorAuthState();
-    },
-    registerAuthProvider: function() {
-        var provider = new firebase.auth.GoogleAuthProvider();
-        firebase.auth().signInWithRedirect(provider).then(function() {
-            firebase.auth().getRedirectResult().then(function(result) {
-                // This gives you a Google Access Token.
-                // You can use it to access the Google API.
-                var token = result.credential.accessToken;
-                // The signed-in user info.
-                var user = result.user;
-                // ...
-                if (user) {
-                    console.log(user);
-                    document.getElementById('body').classList = 'framework7-root verified';
-                    if (window.localStorage.getItem('loggedin')) {
-                        mainView.router.load({ url: 'dashboard.html' });
-                    } else {
-                        mainView.router.load({ url: 'login.html' });
-                        window.localStorage.setItem('loggedin', false);
-                    }
-                } else {
-                    // User is signed out.
-                    document.getElementById('body').classList = 'framework7-root signout';
-                }
-            }).catch(function(error) {
-                // Handle Errors here.
-                var errorCode = error.code;
-                var errorMessage = error.message;
-            });
-        });
-        hybridapp.monitorAuthState();
-    },
-    monitorAuthState: function() {
-        firebase.auth().onAuthStateChanged(function(user) {
-            if (user) {
-                console.log(user);
-                document.getElementById('body').classList = 'framework7-root verified';
-                if (window.localStorage.getItem('loggedin')) {
-                    mainView.router.load({ url: 'dashboard.html' });
-                } else {
-                    mainView.router.load({ url: 'login.html' });
-                    window.localStorage.setItem('loggedin', false);
-                }
-            } else {
-                // User is signed out.
-                document.getElementById('body').classList = 'framework7-root signout';
-            }
-        }, function(error) {
-            console.log(error);
-        });
-    },
     otherContactTpl: function(contact) {
         var id = contact.id,
             phoneNumber = contact.phoneNumbers ? contact.phoneNumbers[0].value : contact.displayName,
@@ -236,9 +172,7 @@ var hybridapp = {
     signUpUser: function(page) {
 
         var username = $$(page.container).find('#email').val();
-        
         var password = $$(page.container).find('#password').val();
-
 
         if (username.length > 0 && password.length > 0) {
             $$.ajax({
@@ -252,7 +186,7 @@ var hybridapp = {
                 },
                 beforeSend: function(xhr) {},
                 error: function(xhr, status) {
-                    myApp.alert("Could not Login");
+                    myApp.alert("Error "+status+": Could not Login.");
                 },
                 success: function(data, status, xhr) {
                     var user = JSON.parse(data);
@@ -266,7 +200,7 @@ var hybridapp = {
                         myApp.alert("User not found");
                     }
                 }
-            })
+            });
         } else {
             myApp.hidePreloader();
             myApp.alert('Valid credentials required . . .');
@@ -464,7 +398,7 @@ var hybridapp = {
         });
     },
     requestLocation: function() {
-        cordova.dialogGPS("Your GPS is Disabled, SafeApp needs it to be enable to work.", //message
+        cordova.dialogGPS("Your GPS is Disabled, SafeApp needs it to work.", //message
             "Use GPS, with wifi or 3G.", //description
             function(buttonIndex) { //callback
                 switch (buttonIndex) {
@@ -559,7 +493,7 @@ myApp.onPageInit('introduction', function(page) {
 
 myApp.onPageInit('change_account', function (page) {
     $$('#switchAccountId').on('click', function () {
-        myApp.alert("Account has been switched successfully!");
+        myApp.alert("You do not have other accounts!");
     });
 });
 
@@ -609,6 +543,11 @@ myApp.onPageInit('dashboard', function(page) {
         }
     });
     
+    $$("#callEmergency").on('click',function(){
+        myApp.closeModal();
+        window.plugins.CallNumber.callNumber(function(){}, function(){}, '112', false);
+    })
+    
     
     $$('#mylocation').on('click', function() {
         myApp.closeModal();
@@ -628,6 +567,11 @@ myApp.onPageInit('dashboard', function(page) {
         myApp.closeModal();
         mainView.router.load({ url: 'change_account.html' });
     });
+    
+    $$('#providers').on('click', function () {
+        myApp.closeModal();
+        mainView.router.load({ url: 'providers.html' });
+    });
 
     // link to track_help map page
     $$('#track_help').on('click', function () {
@@ -642,9 +586,6 @@ myApp.onPageInit('dashboard', function(page) {
     });
     var map;
 
-        //Inject element
-        // $$('head').append("<script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAnLmPtiLZFALqHJpPD5IeDYAI1xtqZ5x0&callback=initMap' async defer ></script >");
-        // $$('head').append("<script src='js/map.js'></script>");
 
     $$(document).on('page:init', '.page[data-page="police_station"]', function (e) {
         initMap();
@@ -660,7 +601,10 @@ myApp.onPageInit('dashboard', function(page) {
 
 
 
-
+$$('#powersave').on('click',function(){
+    myApp.closeModal();
+    cordova.dialogGPS();
+})
     
 
     

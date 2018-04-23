@@ -7,24 +7,40 @@
     "files": {}
   },
   "installed_plugins": {
-    "cordova-plugin-whitelist": {
-      "PACKAGE_NAME": "com.epareto.safeapp"
-    },
     "cordova-plugin-dialogs": {
       "PACKAGE_NAME": "com.epareto.safeapp"
     },
     "cordova-plugin-geolocation": {
       "PACKAGE_NAME": "com.epareto.safeapp"
     },
-    "cordova-plugin-googlemaps": {
-      "API_KEY_FOR_ANDROID": "AIzaSyAnLmPtiLZFALqHJpPD5IeDYAI1xtqZ5x0",
-      "PLAY_SERVICES_VERSION": "12.0.0",
-      "ANDROID_SUPPORT_V4_VERSION": "24.1.0",
+    "cordova-plugin-contacts": {
+      "PACKAGE_NAME": "com.epareto.safeapp"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.epareto.safeapp"
+    },
+    "cordova-plugin-sms": {
+      "PACKAGE_NAME": "com.epareto.safeapp"
+    },
+    "cordova-plugin-nativeaudio": {
+      "PACKAGE_NAME": "com.epareto.safeapp"
+    },
+    "cordova-plugin-local-notification": {
       "PACKAGE_NAME": "com.epareto.safeapp"
     },
     "cordova-plugin-call-number": {
       "PACKAGE_NAME": "com.epareto.safeapp"
+    },
+    "cordova-sms-plugin": {
+      "PACKAGE_NAME": "com.epareto.safeapp"
     }
   },
-  "dependent_plugins": {}
+  "dependent_plugins": {
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.epareto.safeapp"
+    },
+    "cordova-plugin-badge": {
+      "PACKAGE_NAME": "com.epareto.safeapp"
+    }
+  }
 }

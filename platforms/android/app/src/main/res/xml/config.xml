@@ -1,8 +1,38 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.epareto.safeapp" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <feature name="Notification">
+        <param name="android-package" value="org.apache.cordova.dialogs.Notification" />
+    </feature>
+    <feature name="Geolocation">
+        <param name="android-package" value="org.apache.cordova.geolocation.Geolocation" />
+    </feature>
+    <feature name="Contacts">
+        <param name="android-package" value="org.apache.cordova.contacts.ContactManager" />
+    </feature>
     <feature name="Whitelist">
         <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
         <param name="onload" value="true" />
+    </feature>
+    <feature name="SMS">
+        <param name="android-package" value="com.rjfun.cordova.sms.SMSPlugin" />
+    </feature>
+    <feature name="NativeAudio">
+        <param name="android-package" value="com.rjfun.cordova.plugin.nativeaudio.NativeAudio" />
+    </feature>
+    <feature name="Device">
+        <param name="android-package" value="org.apache.cordova.device.Device" />
+    </feature>
+    <feature name="Badge">
+        <param name="android-package" value="de.appplant.cordova.plugin.badge.Badge" />
+    </feature>
+    <feature name="LocalNotification">
+        <param name="android-package" value="de.appplant.cordova.plugin.localnotification.LocalNotification" />
+    </feature>
+    <feature name="CallNumber">
+        <param name="android-package" value="mx.ferreyra.callnumber.CFCallNumber" />
+    </feature>
+    <feature name="Sms">
+        <param name="android-package" value="com.cordova.plugins.sms.Sms" />
     </feature>
     <name>SafeApp</name>
     <description>
@@ -21,57 +51,4 @@
     <allow-intent href="geo:*" />
     <allow-intent href="market:*" />
     <preference name="loglevel" value="DEBUG" />
-    <feature name="Notification">
-        <param name="android-package" value="org.apache.cordova.dialogs.Notification" />
-    </feature>
-    <feature name="Geolocation">
-        <param name="android-package" value="org.apache.cordova.geolocation.Geolocation" />
-    </feature>
-    <preference name="xwalkZOrderOnTop" value="true" />
-    <preference name="BackgroundColor" value="0" />
-    <preference name="android-minSdkVersion" value="19" />
-    <feature name="CordovaGoogleMaps">
-        <param name="android-package" value="plugin.google.maps.CordovaGoogleMaps" />
-        <param name="onload" value="true" />
-        <param name="onreset" value="true" />
-    </feature>
-    <feature name="Map">
-        <param name="android-package" value="plugin.google.maps.PluginMap" />
-    </feature>
-    <feature name="Polyline">
-        <param name="android-package" value="plugin.google.maps.PluginPolyline" />
-    </feature>
-    <feature name="Polygon">
-        <param name="android-package" value="plugin.google.maps.PluginPolygon" />
-    </feature>
-    <feature name="Marker">
-        <param name="android-package" value="plugin.google.maps.PluginMarker" />
-    </feature>
-    <feature name="Circle">
-        <param name="android-package" value="plugin.google.maps.PluginCircle" />
-    </feature>
-    <feature name="TileOverlay">
-        <param name="android-package" value="plugin.google.maps.PluginTileOverlay" />
-    </feature>
-    <feature name="GroundOverlay">
-        <param name="android-package" value="plugin.google.maps.PluginGroundOverlay" />
-    </feature>
-    <feature name="KmlOverlay">
-        <param name="android-package" value="plugin.google.maps.PluginKmlOverlay" />
-    </feature>
-    <feature name="Geocoder">
-        <param name="android-package" value="plugin.google.maps.PluginGeocoder" />
-    </feature>
-    <feature name="LocationService">
-        <param name="android-package" value="plugin.google.maps.PluginLocationService" />
-    </feature>
-    <feature name="Environment">
-        <param name="android-package" value="plugin.google.maps.Environment" />
-    </feature>
-    <feature name="MarkerCluster">
-        <param name="android-package" value="plugin.google.maps.PluginMarkerCluster" />
-    </feature>
-    <feature name="CallNumber">
-        <param name="android-package" value="mx.ferreyra.callnumber.CFCallNumber" />
-    </feature>
 </widget>
