@@ -491,6 +491,12 @@ myApp.onPageInit('introduction', function(page) {
     });
 });
 
+document.addEventListener("backbutton", onBackKeyDown, false);
+
+function onBackKeyDown() {
+    mainView.router.back();
+}
+
 myApp.onPageInit('change_account', function (page) {
     $$('#switchAccountId').on('click', function () {
         myApp.alert("You do not have other accounts!");
@@ -560,7 +566,7 @@ myApp.onPageInit('dashboard', function(page) {
          window.setInterval(function(){
             var tkt = localStorage.getItem("current_ticket");
             fetchChat(tkt);
-        },4000)
+        },2000)
     });
 
     $$('#switchAccount').on('click', function () {
