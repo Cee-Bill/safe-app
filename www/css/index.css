@@ -1223,11 +1223,6 @@ div#map {
     height: 100%;
 }
 
-/* Remove box shadow on dashboard */
-/* a#popUpMenu {
-    box-shadow: none !important;
-} */
-
 /* style logo on navbar */
 .navbar-img {
     width: 49px;
