@@ -622,8 +622,21 @@ myApp.onPageInit('dashboard', function(page) {
 
 $$('#powersave').on('click',function(){
     myApp.closeModal();
-    cordova.dialogGPS();
+    powersaveToggle();
+    
 })
+
+function powersaveToggle(){
+    if(window.powersave == true){
+        window.powersave == false;
+        myApp.alert("GPS powersaving mode enabled, the app will use location only when requested");
+    }
+    
+    else{
+        window.powersave = true;
+        myApp.alert("GPS powersaving mode disabled, the app will continuously use location services");
+    }
+}
     
 
     
