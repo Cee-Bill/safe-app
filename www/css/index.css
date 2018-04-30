@@ -456,7 +456,9 @@ i.icon.icon-missing {
 }
 
 .emergency-button img {
-    width: 80px;
+    width: 80%;
+    margin: auto;
+    display: block;
 }
 
 .emergency-text {
