@@ -19,6 +19,7 @@
         "cordova-plugin-dialog": "0.0.1",
         "cordova-plugin-dialogs": "^2.0.1",
         "cordova-plugin-geolocation": "^4.0.1",
+        "cordova-plugin-inappbrowser": "^3.0.0",
         "cordova-plugin-local-notification": "git+https://github.com/katzer/cordova-plugin-local-notifications.git",
         "cordova-plugin-local-notifications": "^1.0.0",
         "cordova-plugin-nativeaudio": "^3.0.9",
