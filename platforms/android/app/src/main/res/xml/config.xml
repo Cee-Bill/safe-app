@@ -51,4 +51,7 @@
     <allow-intent href="geo:*" />
     <allow-intent href="market:*" />
     <preference name="loglevel" value="DEBUG" />
+    <feature name="DialogGPS">
+        <param name="android-package" value="cl.rmd.cordova.dialoggps.DialogGPS" />
+    </feature>
 </widget>

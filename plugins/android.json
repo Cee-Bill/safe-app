@@ -33,6 +33,9 @@
     },
     "cordova-sms-plugin": {
       "PACKAGE_NAME": "com.epareto.safeapp"
+    },
+    "cl.rmd.cordova.dialoggps": {
+      "PACKAGE_NAME": "com.epareto.safeapp"
     }
   },
   "dependent_plugins": {

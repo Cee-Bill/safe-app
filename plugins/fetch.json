@@ -86,5 +86,13 @@
     },
     "is_top_level": true,
     "variables": {}
+  },
+  "cl.rmd.cordova.dialoggps": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-dialog-gps@^1.0.0"
+    },
+    "is_top_level": true,
+    "variables": {}
   }
 }

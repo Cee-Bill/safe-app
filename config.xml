@@ -32,4 +32,5 @@
     <plugin name="cordova-plugin-call-number" spec="^1.0.1" />
     <plugin name="cordova-sms-plugin" spec="^0.1.11" />
     <engine name="android" spec="^7.0.0" />
+    <plugin name="cl.rmd.cordova.dialoggps" spec="~0.0.2" />
 </widget>

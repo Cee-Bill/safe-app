@@ -1,0 +1,53 @@
+{
+  "_from": "cordova-dialog-gps@^1.0.0",
+  "_id": "cordova-dialog-gps@1.0.0",
+  "_inBundle": false,
+  "_integrity": "sha1-ovXFDA6BTC4W0TjWszGcSQgXIAU=",
+  "_location": "/cordova-dialog-gps",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "cordova-dialog-gps@^1.0.0",
+    "name": "cordova-dialog-gps",
+    "escapedName": "cordova-dialog-gps",
+    "rawSpec": "^1.0.0",
+    "saveSpec": null,
+    "fetchSpec": "^1.0.0"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/cordova-dialog-gps/-/cordova-dialog-gps-1.0.0.tgz",
+  "_shasum": "a2f5c50c0e814c2e16d138d6b3319c4908172005",
+  "_spec": "cordova-dialog-gps@^1.0.0",
+  "_where": "C:\\Users\\jonathan\\Documents\\safeapp",
+  "author": {
+    "name": "rudibr78",
+    "email": "rudi.feijo@multidadosti.com.br"
+  },
+  "bugs": {
+    "url": "https://github.com/alfonsolrmoreno/cordova-dialog-gps/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "cordova dialog gps when user has location disabled",
+  "homepage": "https://github.com/alfonsolrmoreno/cordova-dialog-gps#readme",
+  "keywords": [
+    "cordova",
+    "dialog",
+    "gps"
+  ],
+  "license": "ISC",
+  "main": "index.js",
+  "name": "cordova-dialog-gps",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alfonsolrmoreno/cordova-dialog-gps.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.0.0"
+}
