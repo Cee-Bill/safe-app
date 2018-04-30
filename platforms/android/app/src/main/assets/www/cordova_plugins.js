@@ -162,6 +162,14 @@ module.exports = [
     "clobbers": [
       "window.sms"
     ]
+  },
+  {
+    "id": "cl.rmd.cordova.dialoggps.DialogGPS",
+    "file": "plugins/cl.rmd.cordova.dialoggps/www/DialogGPS.js",
+    "pluginId": "cl.rmd.cordova.dialoggps",
+    "clobbers": [
+      "cordova.dialogGPS"
+    ]
   }
 ];
 module.exports.metadata = 
@@ -177,7 +185,8 @@ module.exports.metadata =
   "cordova-plugin-badge": "0.8.7",
   "cordova-plugin-local-notification": "0.9.0-beta.3",
   "cordova-plugin-call-number": "1.0.1",
-  "cordova-sms-plugin": "0.1.11"
+  "cordova-sms-plugin": "0.1.11",
+  "cl.rmd.cordova.dialoggps": "0.0.2"
 };
 // BOTTOM OF METADATA
 });

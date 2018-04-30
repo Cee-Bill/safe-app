@@ -51,6 +51,10 @@
             {
               "xml": "<feature name=\"Sms\"><param name=\"android-package\" value=\"com.cordova.plugins.sms.Sms\" /></feature>",
               "count": 1
+            },
+            {
+              "xml": "<feature name=\"DialogGPS\"><param name=\"android-package\" value=\"cl.rmd.cordova.dialoggps.DialogGPS\" /></feature>",
+              "count": 1
             }
           ]
         }
@@ -173,6 +177,14 @@
             {
               "xml": "<uses-feature android:name=\"android.hardware.telephony\" android:required=\"false\" />",
               "count": 1
+            },
+            {
+              "xml": "<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\" />",
+              "count": 1
+            },
+            {
+              "xml": "<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\" />",
+              "count": 1
             }
           ]
         }
@@ -216,6 +228,9 @@
       "PACKAGE_NAME": "com.epareto.safeapp"
     },
     "cordova-sms-plugin": {
+      "PACKAGE_NAME": "com.epareto.safeapp"
+    },
+    "cl.rmd.cordova.dialoggps": {
       "PACKAGE_NAME": "com.epareto.safeapp"
     }
   },
@@ -383,6 +398,14 @@
       "clobbers": [
         "window.sms"
       ]
+    },
+    {
+      "id": "cl.rmd.cordova.dialoggps.DialogGPS",
+      "file": "plugins/cl.rmd.cordova.dialoggps/www/DialogGPS.js",
+      "pluginId": "cl.rmd.cordova.dialoggps",
+      "clobbers": [
+        "cordova.dialogGPS"
+      ]
     }
   ],
   "plugin_metadata": {
@@ -396,6 +419,7 @@
     "cordova-plugin-badge": "0.8.7",
     "cordova-plugin-local-notification": "0.9.0-beta.3",
     "cordova-plugin-call-number": "1.0.1",
-    "cordova-sms-plugin": "0.1.11"
+    "cordova-sms-plugin": "0.1.11",
+    "cl.rmd.cordova.dialoggps": "0.0.2"
   }
 }

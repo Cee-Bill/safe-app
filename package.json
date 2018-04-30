@@ -37,7 +37,8 @@
             "cordova-plugin-nativeaudio": {},
             "cordova-plugin-local-notification": {},
             "cordova-plugin-call-number": {},
-            "cordova-sms-plugin": {}
+            "cordova-sms-plugin": {},
+            "cl.rmd.cordova.dialoggps": {}
         },
         "platforms": [
             "android"
