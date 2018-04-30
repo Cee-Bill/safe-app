@@ -177,80 +177,80 @@ uses-permission#android.permission.INTERNET
 ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:26:5-67
 	android:name
 		ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:26:22-64
-uses-permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:27:5-81
-	android:name
-		ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:27:22-78
-uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:28:5-79
-	android:name
-		ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:28:22-76
 uses-permission#android.permission.READ_CONTACTS
-ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:29:5-72
+ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:27:5-72
 	android:name
-		ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:29:22-69
+		ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:27:22-69
 uses-permission#android.permission.WRITE_CONTACTS
-ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:30:5-73
+ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:28:5-73
 	android:name
-		ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:30:22-70
+		ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:28:22-70
 uses-permission#android.permission.GET_ACCOUNTS
-ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:31:5-71
+ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:29:5-71
 	android:name
-		ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:31:22-68
-uses-feature#android.hardware.telephony
-ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:32:5-88
-	android:required
-		ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:32:61-85
+		ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:29:22-68
+uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
+ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:30:5-81
 	android:name
-		ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:32:19-60
-uses-permission#android.permission.READ_PHONE_STATE
+		ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:30:22-78
+uses-permission#android.permission.WAKE_LOCK
+ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:31:5-68
+	android:name
+		ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:31:22-65
+uses-permission#android.permission.RECEIVE_SMS
+ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:32:5-70
+	android:name
+		ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:32:22-67
+uses-permission#android.permission.RECEIVE_WAP_PUSH
 ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:33:5-75
 	android:name
 		ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:33:22-72
-uses-permission#android.permission.RECEIVE_SMS
+uses-permission#android.permission.RECEIVE_MMS
 ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:34:5-70
 	android:name
 		ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:34:22-67
-uses-permission#android.permission.RECEIVE_WAP_PUSH
-ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:35:5-75
-	android:name
-		ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:35:22-72
-uses-permission#android.permission.RECEIVE_MMS
-ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:36:5-70
-	android:name
-		ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:36:22-67
 uses-permission#android.permission.READ_SMS
+ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:35:5-67
+	android:name
+		ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:35:22-64
+uses-permission#android.permission.WRITE_SMS
+ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:36:5-68
+	android:name
+		ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:36:22-65
+uses-permission#android.permission.SEND_SMS
 ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:37:5-67
 	android:name
 		ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:37:22-64
-uses-permission#android.permission.WRITE_SMS
-ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:38:5-68
-	android:name
-		ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:38:22-65
-uses-permission#android.permission.SEND_SMS
-ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:39:5-67
-	android:name
-		ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:39:22-64
 uses-permission#android.permission.MODIFY_AUDIO_SETTINGS
-ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:40:5-80
+ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:38:5-80
 	android:name
-		ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:40:22-77
+		ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:38:22-77
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:41:5-81
+ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:39:5-81
 	android:name
-		ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:41:22-78
-uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
-ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:42:5-81
+		ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:39:22-78
+uses-permission#android.permission.READ_PHONE_STATE
+ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:40:5-75
 	android:name
-		ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:42:22-78
-uses-permission#android.permission.WAKE_LOCK
-ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:43:5-68
-	android:name
-		ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:43:22-65
+		ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:40:22-72
 uses-permission#android.permission.CALL_PHONE
-ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:44:5-69
+ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:41:5-69
 	android:name
-		ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:44:22-66
+		ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:41:22-66
+uses-feature#android.hardware.telephony
+ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:42:5-88
+	android:required
+		ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:42:61-85
+	android:name
+		ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:42:19-60
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:43:5-81
+	android:name
+		ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:43:22-78
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:44:5-79
+	android:name
+		ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:44:22-76
 meta-data#android.support.FILE_PROVIDER_PATHS
 ADDED from C:\Users\jonathan\Documents\safeapp\platforms\android\app\src\main\AndroidManifest.xml:12:13-134
 	android:resource

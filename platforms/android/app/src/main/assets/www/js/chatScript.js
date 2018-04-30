@@ -37,6 +37,7 @@ function sendMessage(ticket_number){
         headers: {"X-USER": JSON.parse(localStorage.getItem("userData")).user_id},
         success: function(data,status,xhr){
             fetchChat(ticket_number)
+            $$('textarea').val("");
         }
     })
 }

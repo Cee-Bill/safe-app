@@ -46,19 +46,29 @@ var hybridapp = {
     }
         
         document.addEventListener("volumedownbutton", onVolumeDownKeyDown, false);
+        document.addEventListener("volumeupbutton",onVolumeUpKeyDown, false);
         myApp.waitTimerCount = 0;
         function onVolumeDownKeyDown() {
             myApp.waitTimerCount++;
             setTimeout(function(){myApp.waitTimerCount = 0},2000)
             if(myApp.waitTimerCount >= 3){
-                myApp.alert("You activated the panic alarm");
+                myApp.alert("You activated the panic alarm, press the volume up button to stop");
                 window.plugins.NativeAudio.loop( 'panicalert' );
-                window.setTimeout( function(){
-
-		window.plugins.NativeAudio.stop( 'panicalert' );
-
-	}, 1000 * 60 );
             }
+        }
+        
+        function onVolumeUpKeyDown(){
+            window.plugins.NativeAudio.stop('panicalert');
+            window.plugins.NativeAudio.unload('panicalert');
+                
+            if( window.plugins && window.plugins.NativeAudio ) {
+	
+	// Preload audio resources
+	window.plugins.NativeAudio.preloadComplex( 'panicalert', 'audio/alert.mp3', 1, 1, 0, function(msg){
+	}, function(msg){
+		console.log( 'error: ' + msg );
+	});
+    }
         }
 
         function onError(e) {
@@ -491,6 +501,15 @@ myApp.onPageInit('introduction', function(page) {
     });
 });
 
+document.addEventListener("backbutton", onBackKeyDown, false);
+
+function onBackKeyDown() {
+    if(mainView.activePage.name != "dashboard"){
+        mainView.router.back();
+    }
+    
+}
+
 myApp.onPageInit('change_account', function (page) {
     $$('#switchAccountId').on('click', function () {
         myApp.alert("You do not have other accounts!");
@@ -560,7 +579,7 @@ myApp.onPageInit('dashboard', function(page) {
          window.setInterval(function(){
             var tkt = localStorage.getItem("current_ticket");
             fetchChat(tkt);
-        },4000)
+        },2000)
     });
 
     $$('#switchAccount').on('click', function () {

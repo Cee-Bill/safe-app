@@ -21,6 +21,14 @@
               "count": 1
             },
             {
+              "xml": "<feature name=\"Badge\"><param name=\"android-package\" value=\"de.appplant.cordova.plugin.badge.Badge\" /></feature>",
+              "count": 1
+            },
+            {
+              "xml": "<feature name=\"LocalNotification\"><param name=\"android-package\" value=\"de.appplant.cordova.plugin.localnotification.LocalNotification\" /></feature>",
+              "count": 1
+            },
+            {
               "xml": "<feature name=\"Whitelist\"><param name=\"android-package\" value=\"org.apache.cordova.whitelist.WhitelistPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
               "count": 1
             },
@@ -33,27 +41,15 @@
               "count": 1
             },
             {
-              "xml": "<feature name=\"Device\"><param name=\"android-package\" value=\"org.apache.cordova.device.Device\" /></feature>",
-              "count": 1
-            },
-            {
-              "xml": "<feature name=\"Badge\"><param name=\"android-package\" value=\"de.appplant.cordova.plugin.badge.Badge\" /></feature>",
-              "count": 1
-            },
-            {
-              "xml": "<feature name=\"LocalNotification\"><param name=\"android-package\" value=\"de.appplant.cordova.plugin.localnotification.LocalNotification\" /></feature>",
-              "count": 1
-            },
-            {
               "xml": "<feature name=\"CallNumber\"><param name=\"android-package\" value=\"mx.ferreyra.callnumber.CFCallNumber\" /></feature>",
               "count": 1
             },
             {
-              "xml": "<feature name=\"Sms\"><param name=\"android-package\" value=\"com.cordova.plugins.sms.Sms\" /></feature>",
+              "xml": "<feature name=\"DialogGPS\"><param name=\"android-package\" value=\"cl.rmd.cordova.dialoggps.DialogGPS\" /></feature>",
               "count": 1
             },
             {
-              "xml": "<feature name=\"DialogGPS\"><param name=\"android-package\" value=\"cl.rmd.cordova.dialoggps.DialogGPS\" /></feature>",
+              "xml": "<feature name=\"Device\"><param name=\"android-package\" value=\"org.apache.cordova.device.Device\" /></feature>",
               "count": 1
             }
           ]
@@ -91,14 +87,6 @@
               "count": 1
             },
             {
-              "xml": "<uses-feature android:name=\"android.hardware.telephony\" android:required=\"false\" />",
-              "count": 2
-            },
-            {
-              "xml": "<uses-permission android:name=\"android.permission.READ_PHONE_STATE\" />",
-              "count": 2
-            },
-            {
               "xml": "<uses-permission android:name=\"android.permission.RECEIVE_SMS\" />",
               "count": 1
             },
@@ -131,7 +119,15 @@
               "count": 1
             },
             {
+              "xml": "<uses-permission android:name=\"android.permission.READ_PHONE_STATE\" />",
+              "count": 1
+            },
+            {
               "xml": "<uses-permission android:name=\"android.permission.CALL_PHONE\" />",
+              "count": 1
+            },
+            {
+              "xml": "<uses-feature android:name=\"android.hardware.telephony\" android:required=\"false\" />",
               "count": 1
             }
           ],
@@ -167,18 +163,6 @@
               "count": 1
             },
             {
-              "xml": "<uses-permission android:name=\"android.permission.SEND_SMS\" />",
-              "count": 1
-            },
-            {
-              "xml": "<uses-permission android:name=\"android.permission.READ_PHONE_STATE\" />",
-              "count": 1
-            },
-            {
-              "xml": "<uses-feature android:name=\"android.hardware.telephony\" android:required=\"false\" />",
-              "count": 1
-            },
-            {
               "xml": "<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\" />",
               "count": 1
             },
@@ -206,6 +190,12 @@
     "cordova-plugin-contacts": {
       "PACKAGE_NAME": "com.epareto.safeapp"
     },
+    "cordova-plugin-badge": {
+      "PACKAGE_NAME": "com.epareto.safeapp"
+    },
+    "cordova-plugin-local-notification": {
+      "PACKAGE_NAME": "com.epareto.safeapp"
+    },
     "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "com.epareto.safeapp"
     },
@@ -215,22 +205,13 @@
     "cordova-plugin-nativeaudio": {
       "PACKAGE_NAME": "com.epareto.safeapp"
     },
-    "cordova-plugin-device": {
-      "PACKAGE_NAME": "com.epareto.safeapp"
-    },
-    "cordova-plugin-badge": {
-      "PACKAGE_NAME": "com.epareto.safeapp"
-    },
-    "cordova-plugin-local-notification": {
-      "PACKAGE_NAME": "com.epareto.safeapp"
-    },
     "cordova-plugin-call-number": {
       "PACKAGE_NAME": "com.epareto.safeapp"
     },
-    "cordova-sms-plugin": {
+    "cl.rmd.cordova.dialoggps": {
       "PACKAGE_NAME": "com.epareto.safeapp"
     },
-    "cl.rmd.cordova.dialoggps": {
+    "cordova-plugin-device": {
       "PACKAGE_NAME": "com.epareto.safeapp"
     }
   },
@@ -344,30 +325,6 @@
       ]
     },
     {
-      "id": "cordova-plugin-sms.SMS",
-      "file": "plugins/cordova-plugin-sms/www/SMS.js",
-      "pluginId": "cordova-plugin-sms",
-      "clobbers": [
-        "window.SMS"
-      ]
-    },
-    {
-      "id": "cordova-plugin-nativeaudio.nativeaudio",
-      "file": "plugins/cordova-plugin-nativeaudio/www/nativeaudio.js",
-      "pluginId": "cordova-plugin-nativeaudio",
-      "clobbers": [
-        "window.plugins.NativeAudio"
-      ]
-    },
-    {
-      "id": "cordova-plugin-device.device",
-      "file": "plugins/cordova-plugin-device/www/device.js",
-      "pluginId": "cordova-plugin-device",
-      "clobbers": [
-        "device"
-      ]
-    },
-    {
       "id": "cordova-plugin-badge.Badge",
       "file": "plugins/cordova-plugin-badge/www/badge.js",
       "pluginId": "cordova-plugin-badge",
@@ -384,19 +341,27 @@
       ]
     },
     {
+      "id": "cordova-plugin-sms.SMS",
+      "file": "plugins/cordova-plugin-sms/www/SMS.js",
+      "pluginId": "cordova-plugin-sms",
+      "clobbers": [
+        "window.SMS"
+      ]
+    },
+    {
+      "id": "cordova-plugin-nativeaudio.nativeaudio",
+      "file": "plugins/cordova-plugin-nativeaudio/www/nativeaudio.js",
+      "pluginId": "cordova-plugin-nativeaudio",
+      "clobbers": [
+        "window.plugins.NativeAudio"
+      ]
+    },
+    {
       "id": "cordova-plugin-call-number.CallNumber",
       "file": "plugins/cordova-plugin-call-number/www/CallNumber.js",
       "pluginId": "cordova-plugin-call-number",
       "clobbers": [
         "call"
-      ]
-    },
-    {
-      "id": "cordova-sms-plugin.Sms",
-      "file": "plugins/cordova-sms-plugin/www/sms.js",
-      "pluginId": "cordova-sms-plugin",
-      "clobbers": [
-        "window.sms"
       ]
     },
     {
@@ -406,20 +371,27 @@
       "clobbers": [
         "cordova.dialogGPS"
       ]
+    },
+    {
+      "id": "cordova-plugin-device.device",
+      "file": "plugins/cordova-plugin-device/www/device.js",
+      "pluginId": "cordova-plugin-device",
+      "clobbers": [
+        "device"
+      ]
     }
   ],
   "plugin_metadata": {
     "cordova-plugin-dialogs": "2.0.1",
     "cordova-plugin-geolocation": "4.0.1",
     "cordova-plugin-contacts": "3.0.1",
+    "cordova-plugin-badge": "0.8.7",
+    "cordova-plugin-local-notification": "0.9.0-beta.3",
     "cordova-plugin-whitelist": "1.3.3",
     "cordova-plugin-sms": "1.0.5",
     "cordova-plugin-nativeaudio": "3.0.9",
-    "cordova-plugin-device": "2.0.2",
-    "cordova-plugin-badge": "0.8.7",
-    "cordova-plugin-local-notification": "0.9.0-beta.3",
     "cordova-plugin-call-number": "1.0.1",
-    "cordova-sms-plugin": "0.1.11",
-    "cl.rmd.cordova.dialoggps": "0.0.2"
+    "cl.rmd.cordova.dialoggps": "0.0.2",
+    "cordova-plugin-device": "2.0.2"
   }
 }

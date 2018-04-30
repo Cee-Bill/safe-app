@@ -108,12 +108,12 @@
         "source": "C:\\Users\\jonathan\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-26.1.0.aar\\8177d5dfece733e8ec9fabecdcb798a7\\res\\layout\\notification_media_action.xml"
     },
     {
-        "merged": "C:\\Users\\jonathan\\Documents\\safeapp\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-port-xhdpi_screen.png.flat",
-        "source": "C:\\Users\\jonathan\\Documents\\safeapp\\platforms\\android\\app\\src\\main\\res\\drawable-port-xhdpi\\screen.png"
-    },
-    {
         "merged": "C:\\Users\\jonathan\\Documents\\safeapp\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_notify_panel_notification_icon_bg.png.flat",
         "source": "C:\\Users\\jonathan\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\535f2384c723b41a6aff26c69a3bd499\\res\\drawable-mdpi-v4\\notify_panel_notification_icon_bg.png"
+    },
+    {
+        "merged": "C:\\Users\\jonathan\\Documents\\safeapp\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-port-xhdpi_screen.png.flat",
+        "source": "C:\\Users\\jonathan\\Documents\\safeapp\\platforms\\android\\app\\src\\main\\res\\drawable-port-xhdpi\\screen.png"
     },
     {
         "merged": "C:\\Users\\jonathan\\Documents\\safeapp\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-port-ldpi_screen.png.flat",
@@ -124,16 +124,16 @@
         "source": "C:\\Users\\jonathan\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\535f2384c723b41a6aff26c69a3bd499\\res\\drawable-mdpi-v4\\notification_bg_low_normal.9.png"
     },
     {
-        "merged": "C:\\Users\\jonathan\\Documents\\safeapp\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\xml_config.xml.flat",
-        "source": "C:\\Users\\jonathan\\Documents\\safeapp\\platforms\\android\\app\\src\\main\\res\\xml\\config.xml"
+        "merged": "C:\\Users\\jonathan\\Documents\\safeapp\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_notification_bg_low_pressed.9.png.flat",
+        "source": "C:\\Users\\jonathan\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\535f2384c723b41a6aff26c69a3bd499\\res\\drawable-mdpi-v4\\notification_bg_low_pressed.9.png"
     },
     {
         "merged": "C:\\Users\\jonathan\\Documents\\safeapp\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_icon.png.flat",
         "source": "C:\\Users\\jonathan\\Documents\\safeapp\\platforms\\android\\app\\src\\main\\res\\mipmap-hdpi\\icon.png"
     },
     {
-        "merged": "C:\\Users\\jonathan\\Documents\\safeapp\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_notification_bg_low_pressed.9.png.flat",
-        "source": "C:\\Users\\jonathan\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\535f2384c723b41a6aff26c69a3bd499\\res\\drawable-mdpi-v4\\notification_bg_low_pressed.9.png"
+        "merged": "C:\\Users\\jonathan\\Documents\\safeapp\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\xml_config.xml.flat",
+        "source": "C:\\Users\\jonathan\\Documents\\safeapp\\platforms\\android\\app\\src\\main\\res\\xml\\config.xml"
     },
     {
         "merged": "C:\\Users\\jonathan\\Documents\\safeapp\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21_notification_template_icon_group.xml.flat",
@@ -184,12 +184,12 @@
         "source": "C:\\Users\\jonathan\\Documents\\safeapp\\platforms\\android\\app\\src\\main\\res\\drawable-land-xxhdpi\\screen.png"
     },
     {
-        "merged": "C:\\Users\\jonathan\\Documents\\safeapp\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-port-xxxhdpi_screen.png.flat",
-        "source": "C:\\Users\\jonathan\\Documents\\safeapp\\platforms\\android\\app\\src\\main\\res\\drawable-port-xxxhdpi\\screen.png"
-    },
-    {
         "merged": "C:\\Users\\jonathan\\Documents\\safeapp\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21_notification_action_background.xml.flat",
         "source": "C:\\Users\\jonathan\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\535f2384c723b41a6aff26c69a3bd499\\res\\drawable-v21\\notification_action_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\jonathan\\Documents\\safeapp\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-port-xxxhdpi_screen.png.flat",
+        "source": "C:\\Users\\jonathan\\Documents\\safeapp\\platforms\\android\\app\\src\\main\\res\\drawable-port-xxxhdpi\\screen.png"
     },
     {
         "merged": "C:\\Users\\jonathan\\Documents\\safeapp\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_notification_bg_normal_pressed.9.png.flat",
