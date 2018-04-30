@@ -456,7 +456,9 @@ i.icon.icon-missing {
 }
 
 .emergency-button img {
-    width: 80px;
+    width: 80%;
+    margin: auto;
+    display: block;
 }
 
 .emergency-text {
@@ -1222,11 +1224,6 @@ div.map-holder {
 div#map {
     height: 100%;
 }
-
-/* Remove box shadow on dashboard */
-/* a#popUpMenu {
-    box-shadow: none !important;
-} */
 
 /* style logo on navbar */
 .navbar-img {
