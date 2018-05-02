@@ -603,6 +603,11 @@ myApp.onPageInit('dashboard', function(page) {
         mainView.router.load({ url: 'track_help.html' });
     });
 
+    $$('#incident_history').on('click', function () {
+        myApp.closeModal();
+        mainView.router.load({ url: 'history.html' });
+    });
+
     // link to nearest police station
     $$('#police_station').on('click', function () {
         myApp.closeModal();
@@ -839,6 +844,7 @@ $$('#switchAccount2').on('click', function () {
     myApp.closeModal();
     mainView.router.load({ url: 'change_account.html' });
 });
+
 
 hybridapp.initialize();
 myApp.init();
