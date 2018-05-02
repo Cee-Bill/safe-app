@@ -31,5 +31,5 @@
     <plugin name="cordova-plugin-local-notification" spec="https://github.com/katzer/cordova-plugin-local-notifications" />
     <plugin name="cordova-plugin-call-number" spec="^1.0.1" />
     <plugin name="cl.rmd.cordova.dialoggps" spec="~0.0.2" />
-    <engine name="android" spec="^7.0.0" />
+    <engine name="android" spec="^6.4.0" />
 </widget>

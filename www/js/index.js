@@ -315,7 +315,7 @@ var hybridapp = {
                 crossDomain: true,
                 method: 'POST',
                 data: {
-                    "ticket_type": 1,
+                    "ticket_type": type,
                     "ticket_location": content
                 },
                 headers: {
@@ -428,18 +428,30 @@ var hybridapp = {
     generateIncidentTpl: function(incident) {
         return '<li><div class="item-content">' +
             '<div class="item-inner"><div class="item-title-row">' +
-            '<div class="item-title">' + incident.title.rendered + '</div>' +
-            '<div class="item-after">Open</div>' +
+            '<div class="item-title">' + incident.title + '</div>' +
+            '<div class="item-after">'+incident.status+'</div>' +
             '</div>' +
-            '<div class="item-subtitle">' + incident.content.rendered + '</div>' +
-            '<div class="item-text">' + incident.date_gmt + '</div>' +
+            '<div class="item-subtitle">' + incident.content + '</div>' +
+            '<div class="item-text">' + incident.created + '</div>' +
             '</div></div></li>';
     },
     showAllIncidents: function(incidents) {
         var $$container = $$('#incident-list');
         $$container.empty();
+        incidents.sort(function(a, b) {
+        var dateA = new Date(a.date)
+        var dateB = new Date(b.date)
+        return dateA > dateB ? 1 : -1;
+    });
         $$.each(incidents, function(e, i) {
-            $$container.append($$(hybridapp.generateIncidentTpl(i)));
+            $.get("http://safeapp.appwebstage.com/api_v2/ticket/get?ticket_number="+i,null,function(data,status,xhr){
+                var statuses = {"6":"Sent","1":"Open","2":"resolved"};
+                data.title = data.topic_id == "1" ? "emergency" : "firstaid";
+                data.content = "test";
+                data.status = statuses[""+data.status_id];
+                $$container.append($$(hybridapp.generateIncidentTpl(data)));
+            })
+            
         });
     }
 };

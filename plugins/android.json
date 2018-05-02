@@ -7,39 +7,42 @@
     "files": {}
   },
   "installed_plugins": {
+    "cl.rmd.cordova.dialoggps": {
+      "PACKAGE_NAME": "com.epareto.safeapp"
+    },
+    "cordova-plugin-call-number": {
+      "PACKAGE_NAME": "com.epareto.safeapp"
+    },
+    "cordova-plugin-contacts": {
+      "PACKAGE_NAME": "com.epareto.safeapp"
+    },
     "cordova-plugin-dialogs": {
       "PACKAGE_NAME": "com.epareto.safeapp"
     },
     "cordova-plugin-geolocation": {
       "PACKAGE_NAME": "com.epareto.safeapp"
     },
-    "cordova-plugin-contacts": {
-      "PACKAGE_NAME": "com.epareto.safeapp"
-    },
-    "cordova-plugin-whitelist": {
-      "PACKAGE_NAME": "com.epareto.safeapp"
-    },
-    "cordova-plugin-sms": {
-      "PACKAGE_NAME": "com.epareto.safeapp"
-    },
-    "cordova-plugin-nativeaudio": {
+    "cordova-plugin-inappbrowser": {
       "PACKAGE_NAME": "com.epareto.safeapp"
     },
     "cordova-plugin-local-notification": {
       "PACKAGE_NAME": "com.epareto.safeapp"
     },
-    "cordova-plugin-call-number": {
+    "cordova-plugin-nativeaudio": {
       "PACKAGE_NAME": "com.epareto.safeapp"
     },
-    "cl.rmd.cordova.dialoggps": {
+    "cordova-plugin-sms": {
+      "PACKAGE_NAME": "com.epareto.safeapp"
+    },
+    "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "com.epareto.safeapp"
     }
   },
   "dependent_plugins": {
-    "cordova-plugin-device": {
+    "cordova-plugin-badge": {
       "PACKAGE_NAME": "com.epareto.safeapp"
     },
-    "cordova-plugin-badge": {
+    "cordova-plugin-device": {
       "PACKAGE_NAME": "com.epareto.safeapp"
     }
   }
