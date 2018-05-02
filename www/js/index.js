@@ -564,7 +564,7 @@ myApp.onPageInit('dashboard', function(page) {
     
     $$("#callEmergency").on('click',function(){
         myApp.closeModal();
-        window.plugins.CallNumber.callNumber(function(){}, function(){}, '112', false);
+        window.plugins.CallNumber.callNumber(function(){}, function(){}, '191', false);
     })
     
     
@@ -585,6 +585,11 @@ myApp.onPageInit('dashboard', function(page) {
     $$('#switchAccount').on('click', function () {
         myApp.closeModal();
         mainView.router.load({ url: 'change_account.html' });
+    });
+
+    $$('#acct-settings').on('click', function () {
+        myApp.closeModal();
+        mainView.router.load({ url: 'account_setting.html' });
     });
     
     $$('#providers').on('click', function () {
@@ -642,7 +647,7 @@ function powersaveToggle(){
     
     $$('#logout').on('click', function() {
         myApp.closeModal();
-        myApp.showPreloader('Loggin you out');
+        myApp.showPreloader('Logging you out');
         setTimeout(function() {
             myApp.hidePreloader();
             window.localStorage.setItem('loggedin', false);
@@ -822,6 +827,17 @@ $$('#clearIncidents').on('click', function() {
     window.localStorage.removeItem('emergencyinprogress');
     window.localStorage.removeItem('firstaidinprogress');
     myApp.alert("All incidents cleared.");
+});
+
+$$('#clearIncidents2').on('click', function () {
+    window.localStorage.removeItem('emergencyinprogress');
+    window.localStorage.removeItem('firstaidinprogress');
+    myApp.alert("All incidents cleared.");
+});
+
+$$('#switchAccount2').on('click', function () {
+    myApp.closeModal();
+    mainView.router.load({ url: 'change_account.html' });
 });
 
 hybridapp.initialize();

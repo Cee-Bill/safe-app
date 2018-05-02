@@ -310,7 +310,7 @@ body.verified .app {
 }
 
 [data-page="introduction"] .image-bg {
-    height: 70%;
+    height: 60%;
     width: 100%;
     display: block;
 }
@@ -324,18 +324,24 @@ body.verified .app {
 }
 
 [data-page="introduction"] .description {
-    height: 30%;
-    display: -webkit-box-flex;
+    height: 40%;
+    display: block;
+    /* display: -webkit-box-flex;
     display: -moz-box;
     display: -ms-flexbox;
     display: -webkit-flex;
-    display: flex;
+    display: flex; */
     -webkit-align-items: center;
     align-items: center;
     text-align: center;
     text-transform: none;
     font-size: 14px;
     padding: 0 20px;
+}
+
+[data-page="introduction"] .description ul {
+    list-style: disc;
+    text-align: left;
 }
 
 [data-page="introduction"] .description .button {
@@ -469,14 +475,14 @@ i.icon.icon-missing {
 }
 
 .inner-button-circle {
-    /* border-radius: 50%; */
-    border-radius: 15%;
-    /* background-image: -moz-linear-gradient( 90deg, rgb(243, 107, 107) 0%, rgb(253, 0, 0) 100%); */
-    background-image: -moz-linear-gradient( 90deg, rgb(249, 179, 131) 0%, rgb(249, 103, 3) 100%);
-    /* background-image: -webkit-linear-gradient( 90deg, rgb(243, 107, 107) 0%, rgb(253, 0, 0) 100%); */
-    background-image: -webkit-linear-gradient( 90deg, rgb(249, 179, 131) 0%, rgb(249, 103, 3) 100%);
-    /* background-image: -ms-linear-gradient( 90deg, rgb(243, 107, 107) 0%, rgb(253, 0, 0) 100%); */
-    background-image: -ms-linear-gradient( 90deg, rgb(249, 179, 131) 0%, rgb(249, 103, 3) 100%);
+    border-radius: 50%;
+    /* border-radius: 15%; */
+    background-image: -moz-linear-gradient( 90deg, rgb(243, 107, 107) 0%, rgb(253, 0, 0) 100%);
+    /* background-image: -moz-linear-gradient( 90deg, rgb(249, 179, 131) 0%, rgb(249, 103, 3) 100%); */
+    background-image: -webkit-linear-gradient( 90deg, rgb(243, 107, 107) 0%, rgb(253, 0, 0) 100%);
+    /* background-image: -webkit-linear-gradient( 90deg, rgb(249, 179, 131) 0%, rgb(249, 103, 3) 100%); */
+    background-image: -ms-linear-gradient( 90deg, rgb(243, 107, 107) 0%, rgb(253, 0, 0) 100%);
+    /* background-image: -ms-linear-gradient( 90deg, rgb(249, 179, 131) 0%, rgb(249, 103, 3) 100%); */
     box-shadow: 0px 1px 0px 0px rgba(255, 107, 107, 0.004), inset 0px 5px 5px 0px rgba(245, 18, 18, 0.004);
     position: absolute;
     width: 180px;
@@ -500,14 +506,14 @@ i.icon.icon-missing {
 }
 
 .outer-button-circle {
-    /* border-radius: 50%; */
-    border-radius: 15%;
-    /* background-image: -moz-linear-gradient( 90deg, rgb(246, 24, 24) 0%, rgb(247, 104, 104) 100%); */
-    background-image: -moz-linear-gradient( 90deg, rgb(244, 121, 37) 0%, rgb(247, 146, 77) 100%);
-    /* background-image: -webkit-linear-gradient( 90deg, rgb(246, 25, 25) 0%, rgb(247, 104, 104) 100%); */
-    background-image: -webkit-linear-gradient( 90deg, rgb(244, 121, 37) 0%, rgb(247, 146, 77) 100%);
-    /* background-image: -ms-linear-gradient( 90deg, rgb(246, 25, 25) 0%, rgb(247, 104, 104) 100%); */
-    background-image: -ms-linear-gradient( 90deg, rgb(244, 121, 37) 0%, rgb(247, 146, 77) 100%);
+    border-radius: 50%;
+    /* border-radius: 15%; */
+    background-image: -moz-linear-gradient( 90deg, rgb(246, 24, 24) 0%, rgb(247, 104, 104) 100%);
+    /* background-image: -moz-linear-gradient( 90deg, rgb(244, 121, 37) 0%, rgb(247, 146, 77) 100%); */
+    background-image: -webkit-linear-gradient( 90deg, rgb(246, 25, 25) 0%, rgb(247, 104, 104) 100%);
+    /* background-image: -webkit-linear-gradient( 90deg, rgb(244, 121, 37) 0%, rgb(247, 146, 77) 100%); */
+    background-image: -ms-linear-gradient( 90deg, rgb(246, 25, 25) 0%, rgb(247, 104, 104) 100%);
+    /* background-image: -ms-linear-gradient( 90deg, rgb(244, 121, 37) 0%, rgb(247, 146, 77) 100%); */
     box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
     position: relative;
     width: 220px;
@@ -1244,4 +1250,9 @@ div#map {
   .map {
     height: 100%;
     width: 100%;
+  }
+
+  button#clearIncidents2 {
+      margin: auto;
+    padding: 0 8px;
   }
